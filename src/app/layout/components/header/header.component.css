@@ -1,0 +1,31 @@
+.app-icon {
+  margin-right: 8px;
+}
+
+.app-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-buttons button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-buttons button.active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.user-menu {
+  margin-left: 16px;
+}

@@ -1,0 +1,3015 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "ApiResponse",
+            "id": "interface-ApiResponse-934977c2ab0f2965d1e24f15b911aabbbd8fdfba31538d8d4183d644608f79b0bfdde5f9c5752d085287139f04a87e94614268d9b7bbae3a41f29e3c9a021aa8",
+            "file": "src/app/shared/models/common.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface ApiResponse<T> {\r\n  data: T;\r\n  message: string;\r\n  success: boolean;\r\n  errors?: string[];\r\n}\r\n\r\nexport interface PaginatedResponse<T> {\r\n  data: T[];\r\n  total: number;\r\n  page: number;\r\n  limit: number;\r\n  totalPages: number;\r\n}\r\n\r\nexport interface BaseEntity {\r\n  id: string;\r\n  createdAt: Date;\r\n  updatedAt: Date;\r\n}\r\n\r\nexport interface SearchParams {\r\n  query?: string;\r\n  page?: number;\r\n  limit?: number;\r\n  sortBy?: string;\r\n  sortOrder?: 'asc' | 'desc';\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "T",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "errors",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string[]",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "message",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "success",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "BaseEntity",
+            "id": "interface-BaseEntity-934977c2ab0f2965d1e24f15b911aabbbd8fdfba31538d8d4183d644608f79b0bfdde5f9c5752d085287139f04a87e94614268d9b7bbae3a41f29e3c9a021aa8",
+            "file": "src/app/shared/models/common.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface ApiResponse<T> {\r\n  data: T;\r\n  message: string;\r\n  success: boolean;\r\n  errors?: string[];\r\n}\r\n\r\nexport interface PaginatedResponse<T> {\r\n  data: T[];\r\n  total: number;\r\n  page: number;\r\n  limit: number;\r\n  totalPages: number;\r\n}\r\n\r\nexport interface BaseEntity {\r\n  id: string;\r\n  createdAt: Date;\r\n  updatedAt: Date;\r\n}\r\n\r\nexport interface SearchParams {\r\n  query?: string;\r\n  page?: number;\r\n  limit?: number;\r\n  sortBy?: string;\r\n  sortOrder?: 'asc' | 'desc';\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "createdAt",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Date",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "updatedAt",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Date",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "DashboardStats",
+            "id": "interface-DashboardStats-78bcf9d505aa145fd13fedfb17f3e665bd23478ba14c57aad645813fe254bebfadcec099c3f970cf68216984613d70549c4e602d488b69b60509cb8d8f3879da",
+            "file": "src/app/features/dashboard/models/dashboard.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface DashboardStats {\r\n  totalWarehouses: number;\r\n  totalJobs: number;\r\n  pendingJobs: number;\r\n  completedJobs: number;\r\n  totalCapacity: number;\r\n  usedCapacity: number;\r\n}\r\n\r\nexport interface RecentActivity {\r\n  id: string;\r\n  type: ActivityType;\r\n  description: string;\r\n  timestamp: Date;\r\n  warehouseId?: string;\r\n  jobId?: string;\r\n}\r\n\r\nexport enum ActivityType {\r\n  JOB_CREATED = 'job_created',\r\n  JOB_COMPLETED = 'job_completed',\r\n  WAREHOUSE_CREATED = 'warehouse_created',\r\n  WAREHOUSE_UPDATED = 'warehouse_updated'\r\n}\r\n\r\nexport type Status = 'pending' | 'completed' | 'inProgress'\r\n\r\nexport interface Job {\r\n  id: string;\r\n  sku: string;\r\n  status: Status;\r\n  assignedUser: string;\r\n  createAt: string;\r\n  details: string;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "completedJobs",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "pendingJobs",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "totalCapacity",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "totalJobs",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "totalWarehouses",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "usedCapacity",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "Job",
+            "id": "interface-Job-78bcf9d505aa145fd13fedfb17f3e665bd23478ba14c57aad645813fe254bebfadcec099c3f970cf68216984613d70549c4e602d488b69b60509cb8d8f3879da",
+            "file": "src/app/features/dashboard/models/dashboard.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface DashboardStats {\r\n  totalWarehouses: number;\r\n  totalJobs: number;\r\n  pendingJobs: number;\r\n  completedJobs: number;\r\n  totalCapacity: number;\r\n  usedCapacity: number;\r\n}\r\n\r\nexport interface RecentActivity {\r\n  id: string;\r\n  type: ActivityType;\r\n  description: string;\r\n  timestamp: Date;\r\n  warehouseId?: string;\r\n  jobId?: string;\r\n}\r\n\r\nexport enum ActivityType {\r\n  JOB_CREATED = 'job_created',\r\n  JOB_COMPLETED = 'job_completed',\r\n  WAREHOUSE_CREATED = 'warehouse_created',\r\n  WAREHOUSE_UPDATED = 'warehouse_updated'\r\n}\r\n\r\nexport type Status = 'pending' | 'completed' | 'inProgress'\r\n\r\nexport interface Job {\r\n  id: string;\r\n  sku: string;\r\n  status: Status;\r\n  assignedUser: string;\r\n  createAt: string;\r\n  details: string;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "assignedUser",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 32
+                },
+                {
+                    "name": "createAt",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 33
+                },
+                {
+                    "name": "details",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 34
+                },
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 29
+                },
+                {
+                    "name": "sku",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 30
+                },
+                {
+                    "name": "status",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Status",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "PaginatedResponse",
+            "id": "interface-PaginatedResponse-934977c2ab0f2965d1e24f15b911aabbbd8fdfba31538d8d4183d644608f79b0bfdde5f9c5752d085287139f04a87e94614268d9b7bbae3a41f29e3c9a021aa8",
+            "file": "src/app/shared/models/common.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface ApiResponse<T> {\r\n  data: T;\r\n  message: string;\r\n  success: boolean;\r\n  errors?: string[];\r\n}\r\n\r\nexport interface PaginatedResponse<T> {\r\n  data: T[];\r\n  total: number;\r\n  page: number;\r\n  limit: number;\r\n  totalPages: number;\r\n}\r\n\r\nexport interface BaseEntity {\r\n  id: string;\r\n  createdAt: Date;\r\n  updatedAt: Date;\r\n}\r\n\r\nexport interface SearchParams {\r\n  query?: string;\r\n  page?: number;\r\n  limit?: number;\r\n  sortBy?: string;\r\n  sortOrder?: 'asc' | 'desc';\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "T[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "limit",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "page",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "total",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "totalPages",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "RecentActivity",
+            "id": "interface-RecentActivity-78bcf9d505aa145fd13fedfb17f3e665bd23478ba14c57aad645813fe254bebfadcec099c3f970cf68216984613d70549c4e602d488b69b60509cb8d8f3879da",
+            "file": "src/app/features/dashboard/models/dashboard.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface DashboardStats {\r\n  totalWarehouses: number;\r\n  totalJobs: number;\r\n  pendingJobs: number;\r\n  completedJobs: number;\r\n  totalCapacity: number;\r\n  usedCapacity: number;\r\n}\r\n\r\nexport interface RecentActivity {\r\n  id: string;\r\n  type: ActivityType;\r\n  description: string;\r\n  timestamp: Date;\r\n  warehouseId?: string;\r\n  jobId?: string;\r\n}\r\n\r\nexport enum ActivityType {\r\n  JOB_CREATED = 'job_created',\r\n  JOB_COMPLETED = 'job_completed',\r\n  WAREHOUSE_CREATED = 'warehouse_created',\r\n  WAREHOUSE_UPDATED = 'warehouse_updated'\r\n}\r\n\r\nexport type Status = 'pending' | 'completed' | 'inProgress'\r\n\r\nexport interface Job {\r\n  id: string;\r\n  sku: string;\r\n  status: Status;\r\n  assignedUser: string;\r\n  createAt: string;\r\n  details: string;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "description",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                },
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "jobId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "timestamp",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Date",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ActivityType",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "warehouseId",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 15
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "SearchParams",
+            "id": "interface-SearchParams-934977c2ab0f2965d1e24f15b911aabbbd8fdfba31538d8d4183d644608f79b0bfdde5f9c5752d085287139f04a87e94614268d9b7bbae3a41f29e3c9a021aa8",
+            "file": "src/app/shared/models/common.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface ApiResponse<T> {\r\n  data: T;\r\n  message: string;\r\n  success: boolean;\r\n  errors?: string[];\r\n}\r\n\r\nexport interface PaginatedResponse<T> {\r\n  data: T[];\r\n  total: number;\r\n  page: number;\r\n  limit: number;\r\n  totalPages: number;\r\n}\r\n\r\nexport interface BaseEntity {\r\n  id: string;\r\n  createdAt: Date;\r\n  updatedAt: Date;\r\n}\r\n\r\nexport interface SearchParams {\r\n  query?: string;\r\n  page?: number;\r\n  limit?: number;\r\n  sortBy?: string;\r\n  sortOrder?: 'asc' | 'desc';\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "limit",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 25
+                },
+                {
+                    "name": "page",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 24
+                },
+                {
+                    "name": "query",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 23
+                },
+                {
+                    "name": "sortBy",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 26
+                },
+                {
+                    "name": "sortOrder",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "\"asc\" | \"desc\"",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 27
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        }
+    ],
+    "injectables": [
+        {
+            "name": "DashboardService",
+            "id": "injectable-DashboardService-de7ab6f097851b7b6ad52ce6f04f46f4e3105d264e87b4dfd337dab7016678adb933293856a81c222712c0a5e2aff2eab7cada929f0e0ba481adb6bcdea26050",
+            "file": "src/app/features/dashboard/services/dashboard.service.ts",
+            "properties": [
+                {
+                    "name": "apiUrl",
+                    "defaultValue": "'http://localhost:3000'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "<p>Base API URL for all HTTP requests</p>\n",
+                    "line": 16,
+                    "rawdescription": "\nBase API URL for all HTTP requests",
+                    "modifierKind": [
+                        123,
+                        148
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "deleteJob",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<void>",
+                    "typeParameters": [],
+                    "line": 70,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nDeletes a specific job from the backend.\n```html\n```typescript\nthis.dashboardService.deleteJob('job-123').subscribe({\n  next: () => console.log('Job deleted successfully'),\n  error: (error) => console.error('Failed to delete job:', error)\n});\n```\n```",
+                    "description": "<p>Deletes a specific job from the backend.</p>\n<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-html\">```typescript\nthis.dashboardService.deleteJob(&#39;job-123&#39;).subscribe({\n  next: () =&gt; console.log(&#39;Job deleted successfully&#39;),\n  error: (error) =&gt; console.error(&#39;Failed to delete job:&#39;, error)\n});</code></pre></div><b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-none\"></code></pre></div>",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 1847,
+                                "end": 1849,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "id"
+                            },
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 1841,
+                                "end": 1846,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<ul>\n<li>Unique identifier of the job to delete</li>\n</ul>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 1898,
+                                "end": 1905,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>Observable<void> - An observable that completes when the job is deleted</p>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 2053,
+                                "end": 2060,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "example"
+                            },
+                            "comment": "<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-typescript\">this.dashboardService.deleteJob(&#39;job-123&#39;).subscribe({\n  next: () =&gt; console.log(&#39;Job deleted successfully&#39;),\n  error: (error) =&gt; console.error(&#39;Failed to delete job:&#39;, error)\n});</code></pre></div>"
+                        }
+                    ]
+                },
+                {
+                    "name": "generateActivitiesFromJobs",
+                    "args": [
+                        {
+                            "name": "jobs",
+                            "type": "Job[]",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "RecentActivity[]",
+                    "typeParameters": [],
+                    "line": 108,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nGenerates mock recent activities from job data.\nCreates activity entries based on job status and creation dates.\n\n\nThis method processes the most recent 3 jobs and creates activities for:\n- Job creation (for all jobs)\n- Job completion (for completed jobs with simulated completion time)\n- Job progress (for in-progress jobs with simulated start time)\n\nThe activities are sorted by timestamp in descending order and limited to 10 items.\n",
+                    "description": "<p>Generates mock recent activities from job data.\nCreates activity entries based on job status and creation dates.</p>\n<p>This method processes the most recent 3 jobs and creates activities for:</p>\n<ul>\n<li>Job creation (for all jobs)</li>\n<li>Job completion (for completed jobs with simulated completion time)</li>\n<li>Job progress (for in-progress jobs with simulated start time)</li>\n</ul>\n<p>The activities are sorted by timestamp in descending order and limited to 10 items.</p>\n",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 3368,
+                                "end": 3372,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "jobs"
+                            },
+                            "type": "Job[]",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 3362,
+                                "end": 3367,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<ul>\n<li>Array of jobs to generate activities from</li>\n</ul>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 3347,
+                                "end": 3354,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "private"
+                            },
+                            "comment": ""
+                        },
+                        {
+                            "tagName": {
+                                "pos": 3424,
+                                "end": 3431,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>RecentActivity[] - Array of generated activities, sorted by timestamp (max 10 items)</p>\n"
+                        }
+                    ]
+                },
+                {
+                    "name": "getJobs",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Observable<Job[]>",
+                    "typeParameters": [],
+                    "line": 34,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nRetrieves all jobs from the backend API.\n```html\n```typescript\nthis.dashboardService.getJobs().subscribe(jobs => {\n  console.log('Loaded jobs:', jobs);\n});\n```\n```",
+                    "description": "<p>Retrieves all jobs from the backend API.</p>\n<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-html\">```typescript\nthis.dashboardService.getJobs().subscribe(jobs =&gt; {\n  console.log(&#39;Loaded jobs:&#39;, jobs);\n});</code></pre></div><b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-none\"></code></pre></div>",
+                    "jsdoctags": [
+                        {
+                            "tagName": {
+                                "pos": 799,
+                                "end": 806,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>Observable&lt;Job[]&gt; - An observable containing an array of all jobs</p>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 880,
+                                "end": 887,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "example"
+                            },
+                            "comment": "<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-typescript\">this.dashboardService.getJobs().subscribe(jobs =&gt; {\n  console.log(&#39;Loaded jobs:&#39;, jobs);\n});</code></pre></div>"
+                        }
+                    ]
+                },
+                {
+                    "name": "getRecentActivities",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Observable<RecentActivity[]>",
+                    "typeParameters": [],
+                    "line": 49,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nGenerates and retrieves recent activities based on job data.\nCreates activity entries for job creation, completion, and progress updates.\n```html\n```typescript\nthis.dashboardService.getRecentActivities().subscribe(activities => {\n  console.log('Recent activities:', activities);\n});\n```\n```",
+                    "description": "<p>Generates and retrieves recent activities based on job data.\nCreates activity entries for job creation, completion, and progress updates.</p>\n<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-html\">```typescript\nthis.dashboardService.getRecentActivities().subscribe(activities =&gt; {\n  console.log(&#39;Recent activities:&#39;, activities);\n});</code></pre></div><b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-none\"></code></pre></div>",
+                    "jsdoctags": [
+                        {
+                            "tagName": {
+                                "pos": 1298,
+                                "end": 1305,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>Observable&lt;RecentActivity[]&gt; - An observable containing recent activities (max 10 items)</p>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 1402,
+                                "end": 1409,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "example"
+                            },
+                            "comment": "<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-typescript\">this.dashboardService.getRecentActivities().subscribe(activities =&gt; {\n  console.log(&#39;Recent activities:&#39;, activities);\n});</code></pre></div>"
+                        }
+                    ]
+                },
+                {
+                    "name": "updateJobStatus",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "status",
+                            "type": "Status",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<Job>",
+                    "typeParameters": [],
+                    "line": 88,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nUpdates the status of a specific job.\n```html\n```typescript\nthis.dashboardService.updateJobStatus('job-123', 'completed').subscribe({\n  next: (updatedJob) => console.log('Job updated:', updatedJob),\n  error: (error) => console.error('Failed to update job:', error)\n});\n```\n```",
+                    "description": "<p>Updates the status of a specific job.</p>\n<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-html\">```typescript\nthis.dashboardService.updateJobStatus(&#39;job-123&#39;, &#39;completed&#39;).subscribe({\n  next: (updatedJob) =&gt; console.log(&#39;Job updated:&#39;, updatedJob),\n  error: (error) =&gt; console.error(&#39;Failed to update job:&#39;, error)\n});</code></pre></div><b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-none\"></code></pre></div>",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 2483,
+                                "end": 2485,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "id"
+                            },
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 2477,
+                                "end": 2482,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<ul>\n<li>Unique identifier of the job to update</li>\n</ul>\n"
+                        },
+                        {
+                            "name": {
+                                "pos": 2540,
+                                "end": 2546,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "status"
+                            },
+                            "type": "Status",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 2534,
+                                "end": 2539,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<ul>\n<li>New status to assign to the job (&#39;pending&#39; | &#39;inProgress&#39; | &#39;completed&#39;)</li>\n</ul>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 2629,
+                                "end": 2636,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>Observable<Job> - An observable containing the updated job object</p>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 2776,
+                                "end": 2783,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "example"
+                            },
+                            "comment": "<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-typescript\">this.dashboardService.updateJobStatus(&#39;job-123&#39;, &#39;completed&#39;).subscribe({\n  next: (updatedJob) =&gt; console.log(&#39;Job updated:&#39;, updatedJob),\n  error: (error) =&gt; console.error(&#39;Failed to update job:&#39;, error)\n});</code></pre></div>"
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "<p>Dashboard service for managing jobs and activities data.\nProvides HTTP operations for CRUD operations on jobs and generates recent activities.</p>\n",
+            "rawdescription": "\n\nDashboard service for managing jobs and activities data.\nProvides HTTP operations for CRUD operations on jobs and generates recent activities.\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { HttpClient } from '@angular/common/http';\r\nimport { Observable, map } from 'rxjs';\r\nimport { Job, RecentActivity, ActivityType, Status } from '../models/dashboard.model';\r\n\r\n/**\r\n * Dashboard service for managing jobs and activities data.\r\n * Provides HTTP operations for CRUD operations on jobs and generates recent activities.\r\n */\r\n@Injectable({\r\n  providedIn: 'root',\r\n})\r\n\r\nexport class DashboardService {\r\n  /** Base API URL for all HTTP requests */\r\n  private readonly apiUrl = 'http://localhost:3000';\r\n\r\n  /**\r\n   * Creates an instance of DashboardService.\r\n   * @param http - Angular HttpClient for making HTTP requests\r\n   */\r\n  constructor(private http: HttpClient) { }\r\n\r\n  /**\r\n   * Retrieves all jobs from the backend API.\r\n   * @returns Observable<Job[]> - An observable containing an array of all jobs\r\n   * @example\r\n   * ```typescript\r\n   * this.dashboardService.getJobs().subscribe(jobs => {\r\n   *   console.log('Loaded jobs:', jobs);\r\n   * });\r\n   * ```\r\n   */\r\n  getJobs(): Observable<Job[]> {\r\n    return this.http.get<Job[]>(`${this.apiUrl}/jobs`);\r\n  }\r\n\r\n  /**\r\n   * Generates and retrieves recent activities based on job data.\r\n   * Creates activity entries for job creation, completion, and progress updates.\r\n   * @returns Observable<RecentActivity[]> - An observable containing recent activities (max 10 items)\r\n   * @example\r\n   * ```typescript\r\n   * this.dashboardService.getRecentActivities().subscribe(activities => {\r\n   *   console.log('Recent activities:', activities);\r\n   * });\r\n   * ```\r\n   */\r\n  getRecentActivities(): Observable<RecentActivity[]> {\r\n    return this.getJobs().pipe(\r\n      map(jobs => {\r\n        return this.generateActivitiesFromJobs(jobs);\r\n      }),\r\n    );\r\n  }\r\n\r\n  /**\r\n   * Deletes a specific job from the backend.\r\n   * @param id - Unique identifier of the job to delete\r\n   * @returns Observable<void> - An observable that completes when the job is deleted\r\n   * @throws HTTP error if the job doesn't exist or deletion fails\r\n   * @example\r\n   * ```typescript\r\n   * this.dashboardService.deleteJob('job-123').subscribe({\r\n   *   next: () => console.log('Job deleted successfully'),\r\n   *   error: (error) => console.error('Failed to delete job:', error)\r\n   * });\r\n   * ```\r\n   */\r\n  deleteJob(id: string): Observable<void> {\r\n    return this.http.delete<void>(`${this.apiUrl}/jobs/${id}`);\r\n  }\r\n\r\n  /**\r\n   * Updates the status of a specific job.\r\n   * @param id - Unique identifier of the job to update\r\n   * @param status - New status to assign to the job ('pending' | 'inProgress' | 'completed')\r\n   * @returns Observable<Job> - An observable containing the updated job object\r\n   * @throws HTTP error if the job doesn't exist or update fails\r\n   * @example\r\n   * ```typescript\r\n   * this.dashboardService.updateJobStatus('job-123', 'completed').subscribe({\r\n   *   next: (updatedJob) => console.log('Job updated:', updatedJob),\r\n   *   error: (error) => console.error('Failed to update job:', error)\r\n   * });\r\n   * ```\r\n   */\r\n  updateJobStatus(id: string, status: Status): Observable<Job> {\r\n    return this.http.patch<Job>(`${this.apiUrl}/jobs/${id}`, { status });\r\n  }\r\n\r\n  /**\r\n   * Generates mock recent activities from job data.\r\n   * Creates activity entries based on job status and creation dates.\r\n   *\r\n   * @private\r\n   * @param jobs - Array of jobs to generate activities from\r\n   * @returns RecentActivity[] - Array of generated activities, sorted by timestamp (max 10 items)\r\n   *\r\n   * @description\r\n   * This method processes the most recent 3 jobs and creates activities for:\r\n   * - Job creation (for all jobs)\r\n   * - Job completion (for completed jobs with simulated completion time)\r\n   * - Job progress (for in-progress jobs with simulated start time)\r\n   *\r\n   * The activities are sorted by timestamp in descending order and limited to 10 items.\r\n   */\r\n  private generateActivitiesFromJobs(jobs: Job[]): RecentActivity[] {\r\n    const activities: RecentActivity[] = [];\r\n\r\n    // Sort jobs by creation date (newest first)\r\n    const sortedJobs = jobs.sort((a, b) =>\r\n      new Date(b.createAt).getTime() - new Date(a.createAt).getTime(),\r\n    );\r\n\r\n    // Take only the 3 most recent jobs to generate activities\r\n    const recentJobs = sortedJobs.slice(0, 3);\r\n\r\n    recentJobs.forEach((job, index) => {\r\n      const createDate = new Date(job.createAt);\r\n      const status: Status = job.status;\r\n\r\n      // Always add job creation activity\r\n      activities.push({\r\n        id: `activity-created-${job.id}-${index}`,\r\n        type: ActivityType.JOB_CREATED,\r\n        description: `Job created: ${job.sku} assigned to ${job.assignedUser}`,\r\n        timestamp: createDate,\r\n        jobId: job.id,\r\n      });\r\n\r\n      // Add completion activity for completed jobs\r\n      if (status === 'completed') {\r\n        const completedDate = new Date(createDate.getTime() + (Math.random() * 24 * 60 * 60 * 1000));\r\n        activities.push({\r\n          id: `activity-completed-${job.id}-${index}`,\r\n          type: ActivityType.JOB_COMPLETED,\r\n          description: `Job completed: ${job.sku} by ${job.assignedUser}`,\r\n          timestamp: completedDate,\r\n          jobId: job.id,\r\n        });\r\n      } else if (status === 'inProgress') {\r\n        // Add progress activity for in-progress jobs\r\n        const progressDate = new Date(createDate.getTime() + (Math.random() * 12 * 60 * 60 * 1000));\r\n        activities.push({\r\n          id: `activity-progress-${job.id}-${index}`,\r\n          type: ActivityType.JOB_CREATED,\r\n          description: `Job started: ${job.sku} being worked on by ${job.assignedUser}`,\r\n          timestamp: progressDate,\r\n          jobId: job.id,\r\n        });\r\n      }\r\n    });\r\n\r\n    // Sort activities by timestamp (newest first) and limit to 10 items\r\n    return activities\r\n      .sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime())\r\n      .slice(0, 10);\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "<p>Creates an instance of DashboardService.</p>\n",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "http",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 16,
+                "rawdescription": "\n\nCreates an instance of DashboardService.\n",
+                "jsdoctags": [
+                    {
+                        "name": {
+                            "pos": 633,
+                            "end": 637,
+                            "kind": 80,
+                            "id": 0,
+                            "flags": 16842752,
+                            "transformFlags": 0,
+                            "escapedText": "http"
+                        },
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "pos": 627,
+                            "end": 632,
+                            "kind": 80,
+                            "id": 0,
+                            "flags": 16842752,
+                            "transformFlags": 0,
+                            "escapedText": "param"
+                        },
+                        "comment": "<ul>\n<li>Angular HttpClient for making HTTP requests</li>\n</ul>\n"
+                    }
+                ]
+            },
+            "extends": [],
+            "type": "injectable"
+        }
+    ],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-bd24686fdd40bb77ee5a59dced1f78356081c4b7c95878817e7265d1880748ff908ad824acd713ea35d9034aa366b29217b116579f071d331aeb93aa6988a24d",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<app-main-layout />\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'warehouse-app'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "MainLayoutComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { MainLayoutComponent } from './layout/components/main-layout/main-layout.component';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  standalone: true,\r\n  imports: [MainLayoutComponent],\r\n  template: `\r\n    <app-main-layout />\r\n  `,\r\n})\r\n\r\nexport class AppComponent {\r\n  title = 'warehouse-app';\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "DashboardComponent",
+            "id": "component-DashboardComponent-aa03dc6614dc5a815aa75501e3251c31e70614adf8d311ed79c21020231c53d13deb7f012846db791f969d831a7a8579855eca4f74154f5b587e6772fe471408",
+            "file": "src/app/features/dashboard/components/dashboard/dashboard.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-dashboard",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./dashboard.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "activitiesError",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | null",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                },
+                {
+                    "name": "activitiesLoading",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                },
+                {
+                    "name": "endDate",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Date | null",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 38
+                },
+                {
+                    "name": "error",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | null",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
+                },
+                {
+                    "name": "filteredJobs",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Job[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "filterOptions",
+                    "defaultValue": "[\r\n    { value: 'all', label: 'All Jobs', icon: 'list' },\r\n    { value: 'pending', label: 'Pending', icon: 'schedule' },\r\n    { value: 'inProgress', label: 'In Progress', icon: 'hourglass_empty' },\r\n    { value: 'completed', label: 'Completed', icon: 'check_circle' },\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 29
+                },
+                {
+                    "name": "jobs",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Job[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "loading",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 22
+                },
+                {
+                    "name": "recentActivities",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "RecentActivity[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "selectedFilter",
+                    "defaultValue": "'all'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Status | \"all\"",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 28
+                },
+                {
+                    "name": "selectedJob",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Job | null",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 42
+                },
+                {
+                    "name": "sidebarOpen",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 41
+                },
+                {
+                    "name": "startDate",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Date | null",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 37
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "applyFilter",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 131,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "clearFilters",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 124,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "closeSidebar",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 209,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "getActivityColor",
+                    "args": [
+                        {
+                            "name": "type",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 171,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "type",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getActivityIcon",
+                    "args": [
+                        {
+                            "name": "type",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 154,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "type",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getCompletedJobsCount",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "number",
+                    "typeParameters": [],
+                    "line": 198,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "getFilteredJobsCount",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "number",
+                    "typeParameters": [],
+                    "line": 150,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "getInProgressJobsCount",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "number",
+                    "typeParameters": [],
+                    "line": 192,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "getPendingJobsCount",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "number",
+                    "typeParameters": [],
+                    "line": 186,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "getStatusColor",
+                    "args": [
+                        {
+                            "name": "status",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 224,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "status",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getStatusIcon",
+                    "args": [
+                        {
+                            "name": "status",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 238,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "status",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "handleJobDeleted",
+                    "args": [
+                        {
+                            "name": "deletedJobId",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 92,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "deletedJobId",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "handleJobStatusUpdated",
+                    "args": [
+                        {
+                            "name": "updatedJob",
+                            "type": "Job",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 98,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "updatedJob",
+                            "type": "Job",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "loadJobs",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 51,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "loadRecentActivities",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 68,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 46,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onDateRangeChange",
+                    "args": [
+                        {
+                            "name": "startDate",
+                            "type": "Date | null",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "endDate",
+                            "type": "Date | null",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 118,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "startDate",
+                            "type": "Date | null",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "endDate",
+                            "type": "Date | null",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onFilterChange",
+                    "args": [
+                        {
+                            "name": "filterValue",
+                            "type": "Status | \"all\"",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 113,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "filterValue",
+                            "type": "Status | \"all\"",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onViewJobDetails",
+                    "args": [
+                        {
+                            "name": "job",
+                            "type": "Job",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 204,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "job",
+                            "type": "Job",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "sortJobsByDate",
+                    "args": [
+                        {
+                            "name": "jobs",
+                            "type": "Job[]",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Job[]",
+                    "typeParameters": [],
+                    "line": 216,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "jobs",
+                            "type": "Job[]",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "trackByActivityId",
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "activity",
+                            "type": "RecentActivity",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 88,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "activity",
+                            "type": "RecentActivity",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "trackByJobId",
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "job",
+                            "type": "Job",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 84,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "job",
+                            "type": "Job",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MaterialModule",
+                    "type": "module"
+                },
+                {
+                    "name": "JobCardComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "JobDetailsSidebarComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { MaterialModule } from '../../../../shared/material.module';\r\nimport { DashboardService } from '../../services/dashboard.service';\r\nimport { Job, RecentActivity, Status } from '../../models/dashboard.model';\r\nimport { JobCardComponent } from '../job-card/job-card.component';\r\nimport { JobDetailsSidebarComponent } from '../job-details-sidebar/job-details-sidebar.component';\r\n\r\n@Component({\r\n  selector: 'app-dashboard',\r\n  standalone: true,\r\n  imports: [CommonModule, FormsModule, MaterialModule, JobCardComponent, JobDetailsSidebarComponent],\r\n  templateUrl: './dashboard.component.html',\r\n  styleUrl: './dashboard.component.css',\r\n})\r\n\r\nexport class DashboardComponent implements OnInit {\r\n  jobs: Job[] = [];\r\n  filteredJobs: Job[] = [];\r\n  recentActivities: RecentActivity[] = [];\r\n  loading = false;\r\n  activitiesLoading = false;\r\n  error: string | null = null;\r\n  activitiesError: string | null = null;\r\n\r\n  // Filter state\r\n  selectedFilter: Status | 'all' = 'all';\r\n  filterOptions: { value: Status | 'all'; label: string; icon: string }[] = [\r\n    { value: 'all', label: 'All Jobs', icon: 'list' },\r\n    { value: 'pending', label: 'Pending', icon: 'schedule' },\r\n    { value: 'inProgress', label: 'In Progress', icon: 'hourglass_empty' },\r\n    { value: 'completed', label: 'Completed', icon: 'check_circle' },\r\n  ];\r\n\r\n  // Date filter state\r\n  startDate: Date | null = null;\r\n  endDate: Date | null = null;\r\n\r\n  // Sidebar state\r\n  sidebarOpen = false;\r\n  selectedJob: Job | null = null;\r\n\r\n  constructor(private dashboardService: DashboardService) {}\r\n\r\n  ngOnInit(): void {\r\n    this.loadJobs();\r\n    this.loadRecentActivities();\r\n  }\r\n\r\n  private loadJobs(): void {\r\n    this.loading = true;\r\n    this.error = null;\r\n\r\n    this.dashboardService.getJobs().subscribe({\r\n      next: (jobs) => {\r\n        this.jobs = this.sortJobsByDate(jobs);\r\n        this.applyFilter();\r\n        this.loading = false;\r\n      },\r\n      error: (_error) => {\r\n        this.error = 'Failed to load jobs';\r\n        this.loading = false;\r\n      },\r\n    });\r\n  }\r\n\r\n  private loadRecentActivities(): void {\r\n    this.activitiesLoading = true;\r\n    this.activitiesError = null;\r\n\r\n    this.dashboardService.getRecentActivities().subscribe({\r\n      next: (activities) => {\r\n        this.recentActivities = activities;\r\n        this.activitiesLoading = false;\r\n      },\r\n      error: (_error) => {\r\n        this.activitiesError = 'Failed to load activities';\r\n        this.activitiesLoading = false;\r\n      },\r\n    });\r\n  }\r\n\r\n  trackByJobId(index: number, job: Job): string {\r\n    return job.id;\r\n  }\r\n\r\n  trackByActivityId(index: number, activity: RecentActivity): string {\r\n    return activity.id;\r\n  }\r\n\r\n  handleJobDeleted(deletedJobId: string): void {\r\n    this.jobs = this.jobs.filter(job => job.id !== deletedJobId);\r\n    this.filteredJobs = this.filteredJobs.filter(job => job.id !== deletedJobId);\r\n    this.sidebarOpen = false;\r\n  }\r\n\r\n  handleJobStatusUpdated(updatedJob: Job): void {\r\n    // Update the job in the jobs array\r\n    const jobIndex = this.jobs.findIndex(job => job.id === updatedJob.id);\r\n    if (jobIndex !== -1) {\r\n      this.jobs[jobIndex] = updatedJob;\r\n    }\r\n\r\n    // Re-apply filter to show updated jobs\r\n    this.applyFilter();\r\n\r\n    // Refresh recent activities to reflect the status change\r\n    this.loadRecentActivities();\r\n  }\r\n\r\n  // Filter methods\r\n  onFilterChange(filterValue: Status | 'all'): void {\r\n    this.selectedFilter = filterValue;\r\n    this.applyFilter();\r\n  }\r\n\r\n  onDateRangeChange(startDate: Date | null, endDate: Date | null): void {\r\n    this.startDate = startDate;\r\n    this.endDate = endDate;\r\n    this.applyFilter();\r\n  }\r\n\r\n  clearFilters(): void {\r\n    this.selectedFilter = 'all';\r\n    this.startDate = null;\r\n    this.endDate = null;\r\n    this.applyFilter();\r\n  }\r\n\r\n  private applyFilter(): void {\r\n    this.filteredJobs = this.jobs.filter(job => {\r\n      // Status filter\r\n      const matchesStatus = this.selectedFilter === 'all' || job.status === this.selectedFilter;\r\n\r\n      // Date filter\r\n      let matchesDateRange = true;\r\n      if (this.startDate || this.endDate) {\r\n        const jobDate = new Date(job.createAt);\r\n        const startOfDay = this.startDate ? new Date(this.startDate.getFullYear(), this.startDate.getMonth(), this.startDate.getDate()) : null;\r\n        const endOfDay = this.endDate ? new Date(this.endDate.getFullYear(), this.endDate.getMonth(), this.endDate.getDate(), 23, 59, 59) : null;\r\n\r\n        matchesDateRange = (!startOfDay || jobDate >= startOfDay) && (!endOfDay || jobDate <= endOfDay);\r\n      }\r\n\r\n      return matchesStatus && matchesDateRange;\r\n    });\r\n  }\r\n\r\n  getFilteredJobsCount(): number {\r\n    return this.filteredJobs.length;\r\n  }\r\n\r\n  getActivityIcon(type: string): string {\r\n    switch (type.toLowerCase()) {\r\n      case 'job_created':\r\n        return 'add_circle';\r\n      case 'job_started':\r\n        return 'start';\r\n      case 'job_completed':\r\n        return 'check_circle';\r\n      case 'warehouse_created':\r\n        return 'warehouse';\r\n      case 'warehouse_updated':\r\n        return 'edit_location';\r\n      default:\r\n        return 'info';\r\n    }\r\n  }\r\n\r\n  getActivityColor(type: string): string {\r\n    switch (type.toLowerCase()) {\r\n      case 'job_created':\r\n        return 'accent';\r\n      case 'job_completed':\r\n        return 'primary';\r\n      case 'warehouse_created':\r\n        return 'primary';\r\n      case 'warehouse_updated':\r\n        return 'warn';\r\n      default:\r\n        return '';\r\n    }\r\n  }\r\n\r\n  getPendingJobsCount(): number {\r\n    return this.jobs.filter(job => {\r\n      return job.status === 'pending';\r\n    }).length;\r\n  }\r\n\r\n  getInProgressJobsCount(): number {\r\n    return this.jobs.filter(job => {\r\n      return job.status === 'inProgress';\r\n    }).length;\r\n  }\r\n\r\n  getCompletedJobsCount(): number {\r\n    return this.jobs.filter(job => {\r\n      return job.status === 'completed';\r\n    }).length;\r\n  }\r\n\r\n  onViewJobDetails(job: Job): void {\r\n    this.selectedJob = job;\r\n    this.sidebarOpen = true;\r\n  }\r\n\r\n  closeSidebar(): void {\r\n    this.sidebarOpen = false;\r\n    setTimeout(() => {\r\n      this.selectedJob = null;\r\n    }, 300); // Wait for animation to complete\r\n  }\r\n\r\n  private sortJobsByDate(jobs: Job[]): Job[] {\r\n    return jobs.sort((a, b) => {\r\n      const dateA = new Date(a.createAt).getTime();\r\n      const dateB = new Date(b.createAt).getTime();\r\n      return dateB - dateA; // Descending order (newest first)\r\n    });\r\n  }\r\n\r\n  getStatusColor(status: string): string {\r\n    switch (status) {\r\n      case 'Completed':\r\n        return 'primary';\r\n      case 'Pending':\r\n        return 'warn';\r\n      case 'In Progress':\r\n        return 'accent';\r\n\r\n      default:\r\n        return '';\r\n    }\r\n  }\r\n\r\n  getStatusIcon(status: string): string {\r\n    switch (status) {\r\n      case 'Completed':\r\n        return 'check_circle';\r\n      case 'Pending':\r\n        return 'schedule';\r\n      case 'In Progress':\r\n        return 'hourglass_empty';\r\n\r\n      default:\r\n        return 'info';\r\n    }\r\n  }\r\n}\r\n",
+            "styleUrl": "./dashboard.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "dashboardService",
+                        "type": "DashboardService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 42,
+                "jsdoctags": [
+                    {
+                        "name": "dashboardService",
+                        "type": "DashboardService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"dashboard-container\">\r\n  <!-- Job Details Sidebar Component -->\r\n  <app-job-details-sidebar\r\n    [isOpen]=\"sidebarOpen\"\r\n    [selectedJob]=\"selectedJob\"\r\n    (closeSidebar)=\"closeSidebar()\"\r\n    (jobDeleted)=\"handleJobDeleted($event)\"\r\n    (jobStatusUpdated)=\"handleJobStatusUpdated($event)\"\r\n  ></app-job-details-sidebar>\r\n\r\n  <div class=\"dashboard-content\" [class.sidebar-open]=\"sidebarOpen\">\r\n    <div class=\"stats-grid\">\r\n      <mat-card class=\"stat-card\">\r\n        <mat-card-header>\r\n          <mat-card-title>\r\n            <mat-icon color=\"primary\">assignment</mat-icon>\r\n            Total Jobs\r\n          </mat-card-title>\r\n        </mat-card-header>\r\n        <mat-card-content>\r\n          <div class=\"stat-number\">{{ jobs.length }}</div>\r\n          <div class=\"stat-subtitle\">Total jobs in system</div>\r\n        </mat-card-content>\r\n      </mat-card>\r\n\r\n      <mat-card class=\"stat-card pending\">\r\n        <mat-card-header>\r\n          <mat-card-title>\r\n            <mat-icon color=\"warn\">schedule</mat-icon>\r\n            Pending Jobs\r\n          </mat-card-title>\r\n        </mat-card-header>\r\n        <mat-card-content>\r\n          <div class=\"stat-number\">{{ getPendingJobsCount() }}</div>\r\n          <div class=\"stat-subtitle\">Awaiting completion</div>\r\n        </mat-card-content>\r\n      </mat-card>\r\n\r\n      <mat-card class=\"stat-card in-progress\">\r\n        <mat-card-header>\r\n          <mat-card-title>\r\n            <mat-icon color=\"accent\">hourglass_empty</mat-icon>\r\n            In Progress Jobs\r\n          </mat-card-title>\r\n        </mat-card-header>\r\n        <mat-card-content>\r\n          <div class=\"stat-number\">{{ getInProgressJobsCount() }}</div>\r\n          <div class=\"stat-subtitle\">Currently working</div>\r\n        </mat-card-content>\r\n      </mat-card>\r\n\r\n      <mat-card class=\"stat-card completed\">\r\n        <mat-card-header>\r\n          <mat-card-title>\r\n            <mat-icon color=\"primary\">done_all</mat-icon>\r\n            Completed Jobs\r\n          </mat-card-title>\r\n        </mat-card-header>\r\n        <mat-card-content>\r\n          <div class=\"stat-number\">{{ getCompletedJobsCount() }}</div>\r\n          <div class=\"stat-subtitle\">Successfully finished</div>\r\n        </mat-card-content>\r\n      </mat-card>\r\n    </div>\r\n\r\n    <div class=\"jobs-section\">\r\n      <div class=\"section-header\">\r\n        <div class=\"section-title\">\r\n          <mat-icon>assignment</mat-icon>\r\n          <h2>Jobs List</h2>\r\n          <span class=\"job-count\">({{ getFilteredJobsCount() }} jobs)</span>\r\n        </div>\r\n        <div class=\"filter-container\">\r\n          <button mat-stroked-button class=\"clear-filters-btn\" (click)=\"clearFilters()\">\r\n            <mat-icon>clear</mat-icon>\r\n            Clear Filters\r\n          </button>\r\n\r\n          <mat-form-field appearance=\"outline\" class=\"filter-select\">\r\n            <mat-label>Filter by status</mat-label>\r\n            <mat-select [value]=\"selectedFilter\" (selectionChange)=\"onFilterChange($event.value)\">\r\n              @for (option of filterOptions; track option.value) {\r\n                <mat-option [value]=\"option.value\">\r\n                  <mat-icon class=\"filter-option-icon\">{{ option.icon }}</mat-icon>\r\n                  {{ option.label }}\r\n                </mat-option>\r\n              }\r\n            </mat-select>\r\n          </mat-form-field>\r\n\r\n          <mat-form-field appearance=\"outline\" class=\"date-range-picker\">\r\n            <mat-label>Date Range</mat-label>\r\n            <mat-date-range-input [rangePicker]=\"picker\">\r\n              <input matStartDate placeholder=\"Start date\" [(ngModel)]=\"startDate\" (dateChange)=\"onDateRangeChange(startDate, endDate)\" />\r\n              <input matEndDate placeholder=\"End date\" [(ngModel)]=\"endDate\" (dateChange)=\"onDateRangeChange(startDate, endDate)\" />\r\n            </mat-date-range-input>\r\n            <mat-datepicker-toggle matIconSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n            <mat-date-range-picker #picker></mat-date-range-picker>\r\n          </mat-form-field>\r\n        </div>\r\n      </div>\r\n\r\n      @if (loading) {\r\n        <div class=\"loading-container\">\r\n          <mat-spinner diameter=\"50\"></mat-spinner>\r\n          <p>Loading jobs...</p>\r\n        </div>\r\n      } @else if (error) {\r\n        <div class=\"error-container\">\r\n          <mat-icon color=\"warn\">error</mat-icon>\r\n          <p>{{ error }}</p>\r\n        </div>\r\n      } @else {\r\n        <div class=\"jobs-grid\">\r\n          @for (job of filteredJobs; track trackByJobId($index, job)) {\r\n            <app-job-card [job]=\"job\" (viewDetails)=\"onViewJobDetails($event)\"></app-job-card>\r\n          } @empty {\r\n            <div class=\"no-jobs\">\r\n              <mat-icon>info</mat-icon>\r\n              <p>No jobs found</p>\r\n            </div>\r\n          }\r\n        </div>\r\n      }\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"recent-activity\">\r\n    <mat-card>\r\n      <mat-card-header>\r\n        <mat-card-title>\r\n          <mat-icon>history</mat-icon>\r\n          Recent Activity\r\n        </mat-card-title>\r\n      </mat-card-header>\r\n      <mat-card-content>\r\n        @if (activitiesLoading) {\r\n          <div class=\"loading-container\">\r\n            <mat-spinner diameter=\"30\"></mat-spinner>\r\n            <p>Loading activities...</p>\r\n          </div>\r\n        } @else if (activitiesError) {\r\n          <div class=\"error-container\">\r\n            <mat-icon color=\"warn\">error</mat-icon>\r\n            <p>{{ activitiesError }}</p>\r\n          </div>\r\n        } @else {\r\n          <mat-list>\r\n            @for (activity of recentActivities; track trackByActivityId($index, activity)) {\r\n              <mat-list-item>\r\n                <mat-icon matListItemIcon [color]=\"getActivityColor(activity.type)\">{{ getActivityIcon(activity.type) }}</mat-icon>\r\n                <div matListItemTitle>{{ activity.description }}</div>\r\n                <div matListItemLine>{{ activity.timestamp | date: 'short' }}</div>\r\n              </mat-list-item>\r\n              @if (!$last) {\r\n                <mat-divider></mat-divider>\r\n              }\r\n            } @empty {\r\n              <div class=\"no-activities\">\r\n                <mat-icon>info</mat-icon>\r\n                <p>No recent activities</p>\r\n              </div>\r\n            }\r\n          </mat-list>\r\n        }\r\n      </mat-card-content>\r\n    </mat-card>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-88b993afc5b730d7efadd37f6d58b84ac9cc3408cb150794a0f9d8267979b190aaee0813cd5040b7d14abaf3b5c0a25567dd4bfa9080d79669ff4896c617ef6f",
+            "file": "src/app/layout/components/header/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-header",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./header.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "RouterModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MaterialModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RouterModule } from '@angular/router';\r\nimport { MaterialModule } from '../../../shared/material.module';\r\n\r\n@Component({\r\n  selector: 'app-header',\r\n  standalone: true,\r\n  imports: [RouterModule, MaterialModule],\r\n  templateUrl: './header.component.html',\r\n  styleUrl: './header.component.css',\r\n})\r\nexport class HeaderComponent {\r\n\r\n}\r\n",
+            "styleUrl": "./header.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<mat-toolbar color=\"primary\">\r\n  <mat-icon class=\"app-icon\">warehouse</mat-icon>\r\n  <span class=\"app-title\">Warehouse App</span>\r\n\r\n  <span class=\"spacer\"></span>\r\n\r\n  <nav class=\"nav-buttons\">\r\n    <button mat-button routerLink=\"/dashboard\" routerLinkActive=\"active\">\r\n      <mat-icon>dashboard</mat-icon>\r\n      Dashboard\r\n    </button>\r\n  </nav>\r\n\r\n  <button mat-icon-button [matMenuTriggerFor]=\"menu\" class=\"user-menu\">\r\n    <mat-icon>account_circle</mat-icon>\r\n  </button>\r\n\r\n  <mat-menu #menu=\"matMenu\">\r\n    <button mat-menu-item>\r\n      <mat-icon>person</mat-icon>\r\n      <span>Profile</span>\r\n    </button>\r\n    <button mat-menu-item>\r\n      <mat-icon>settings</mat-icon>\r\n      <span>Settings</span>\r\n    </button>\r\n    <mat-divider></mat-divider>\r\n    <button mat-menu-item>\r\n      <mat-icon>logout</mat-icon>\r\n      <span>Logout</span>\r\n    </button>\r\n  </mat-menu>\r\n</mat-toolbar>\r\n"
+        },
+        {
+            "name": "JobCardComponent",
+            "id": "component-JobCardComponent-6665326ea2a9a4515852dc1c60ef1627d9e86b0c6d338f98ee03a248c8a08d3c17de8231f9ec0d18af19512c70619b01f451441fbd13d0cdae64d9c5d6493e85",
+            "file": "src/app/features/dashboard/components/job-card/job-card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-job-card",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./job-card.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "job",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nJob data to be displayed in the card.\nRequired input property containing all job information.\n",
+                    "description": "<p>Job data to be displayed in the card.\nRequired input property containing all job information.</p>\n",
+                    "line": 26,
+                    "type": "Job",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "viewDetails",
+                    "defaultValue": "new EventEmitter<Job>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nEvent emitter for when user wants to view job details.\nEmits the complete job object to parent component.\n",
+                    "description": "<p>Event emitter for when user wants to view job details.\nEmits the complete job object to parent component.</p>\n",
+                    "line": 32,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "getStatusClass",
+                    "args": [
+                        {
+                            "name": "status",
+                            "type": "Status",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 118,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nReturns the appropriate CSS class name for styling based on job status.\nUsed for applying status-specific styling to card elements.\n\n\n```html\n```typescript\nconst cssClass = this.getStatusClass('inProgress'); // returns 'in-progress'\n```\n```\nCSS class mapping:\n- 'completed' → 'completed' (green styling)\n- 'pending' → 'pending' (orange styling)\n- 'inProgress' → 'in-progress' (purple styling)\n- default → '' (no specific styling)\n",
+                    "description": "<p>Returns the appropriate CSS class name for styling based on job status.\nUsed for applying status-specific styling to card elements.</p>\n<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-html\">```typescript\nconst cssClass = this.getStatusClass(&#39;inProgress&#39;); // returns &#39;in-progress&#39;</code></pre></div><b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-none\">CSS class mapping:\n- &#39;completed&#39; → &#39;completed&#39; (green styling)\n- &#39;pending&#39; → &#39;pending&#39; (orange styling)\n- &#39;inProgress&#39; → &#39;in-progress&#39; (purple styling)\n- default → &#39;&#39; (no specific styling)</code></pre></div>",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 3125,
+                                "end": 3131,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "status"
+                            },
+                            "type": "Status",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 3119,
+                                "end": 3124,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<ul>\n<li>The job status to get CSS class for</li>\n</ul>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 3177,
+                                "end": 3184,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>CSS class name string</p>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 3220,
+                                "end": 3227,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "example"
+                            },
+                            "comment": "<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-typescript\">const cssClass = this.getStatusClass(&#39;inProgress&#39;); // returns &#39;in-progress&#39;</code></pre></div>"
+                        }
+                    ]
+                },
+                {
+                    "name": "getStatusColor",
+                    "args": [
+                        {
+                            "name": "status",
+                            "type": "Status",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 53,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nReturns the appropriate Angular Material color theme for a given job status.\nUsed for styling status chips and indicators with consistent color coding.\n\n\n```html\n```typescript\nconst color = this.getStatusColor('completed'); // returns 'primary'\n```\n```\nColor mapping:\n- 'completed' → 'primary' (blue/green theme)\n- 'pending' → 'warn' (orange/amber theme)\n- 'inProgress' → 'accent' (purple/pink theme)\n- default → '' (no theme applied)\n",
+                    "description": "<p>Returns the appropriate Angular Material color theme for a given job status.\nUsed for styling status chips and indicators with consistent color coding.</p>\n<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-html\">```typescript\nconst color = this.getStatusColor(&#39;completed&#39;); // returns &#39;primary&#39;</code></pre></div><b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-none\">Color mapping:\n- &#39;completed&#39; → &#39;primary&#39; (blue/green theme)\n- &#39;pending&#39; → &#39;warn&#39; (orange/amber theme)\n- &#39;inProgress&#39; → &#39;accent&#39; (purple/pink theme)\n- default → &#39;&#39; (no theme applied)</code></pre></div>",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 1255,
+                                "end": 1261,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "status"
+                            },
+                            "type": "Status",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 1249,
+                                "end": 1254,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<ul>\n<li>The job status to get color for</li>\n</ul>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 1303,
+                                "end": 1310,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>Material theme color string (&#39;primary&#39; | &#39;warn&#39; | &#39;accent&#39; | &#39;&#39;)</p>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 1389,
+                                "end": 1396,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "example"
+                            },
+                            "comment": "<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-typescript\">const color = this.getStatusColor(&#39;completed&#39;); // returns &#39;primary&#39;</code></pre></div>"
+                        }
+                    ]
+                },
+                {
+                    "name": "getStatusIcon",
+                    "args": [
+                        {
+                            "name": "status",
+                            "type": "Status",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 85,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nReturns the appropriate Material Design icon name for a given job status.\nProvides visual representation of job state using recognizable icons.\n\n\n```html\n```typescript\nconst icon = this.getStatusIcon('pending'); // returns 'schedule'\n```\n```\nIcon mapping:\n- 'completed' → 'check_circle' (checkmark in circle)\n- 'pending' → 'schedule' (clock icon)\n- 'inProgress' → 'hourglass_empty' (hourglass icon)\n- default → 'info' (information icon)\n",
+                    "description": "<p>Returns the appropriate Material Design icon name for a given job status.\nProvides visual representation of job state using recognizable icons.</p>\n<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-html\">```typescript\nconst icon = this.getStatusIcon(&#39;pending&#39;); // returns &#39;schedule&#39;</code></pre></div><b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-none\">Icon mapping:\n- &#39;completed&#39; → &#39;check_circle&#39; (checkmark in circle)\n- &#39;pending&#39; → &#39;schedule&#39; (clock icon)\n- &#39;inProgress&#39; → &#39;hourglass_empty&#39; (hourglass icon)\n- default → &#39;info&#39; (information icon)</code></pre></div>",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 2196,
+                                "end": 2202,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "status"
+                            },
+                            "type": "Status",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 2190,
+                                "end": 2195,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<ul>\n<li>The job status to get icon for</li>\n</ul>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 2243,
+                                "end": 2250,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>Material Design icon name string</p>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 2297,
+                                "end": 2304,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "example"
+                            },
+                            "comment": "<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-typescript\">const icon = this.getStatusIcon(&#39;pending&#39;); // returns &#39;schedule&#39;</code></pre></div>"
+                        }
+                    ]
+                },
+                {
+                    "name": "onViewDetails",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 149,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHandles the view details button click event.\nEmits the current job object to parent component for detailed view.\n\n\n```html\n```html\n<button (click)=\"onViewDetails()\">View Details</button>\n```\n```\nThis method is typically called when user clicks on \"View Details\" button\nor the card itself. It emits the complete job object through the viewDetails\nEventEmitter, allowing parent components to open detailed job information\nin a sidebar, modal, or separate view.\n",
+                    "description": "<p>Handles the view details button click event.\nEmits the current job object to parent component for detailed view.</p>\n<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-html\">```html\n&lt;button (click)=&quot;onViewDetails()&quot;&gt;View Details&lt;/button&gt;</code></pre></div><b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-none\">This method is typically called when user clicks on &quot;View Details&quot; button\nor the card itself. It emits the complete job object through the viewDetails\nEventEmitter, allowing parent components to open detailed job information\nin a sidebar, modal, or separate view.</code></pre></div>",
+                    "jsdoctags": [
+                        {
+                            "tagName": {
+                                "pos": 4017,
+                                "end": 4024,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>void</p>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 4043,
+                                "end": 4050,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "example"
+                            },
+                            "comment": "<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-html\">&lt;button (click)=&quot;onViewDetails()&quot;&gt;View Details&lt;/button&gt;</code></pre></div>"
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MaterialModule",
+                    "type": "module"
+                }
+            ],
+            "description": "<p>Job Card Component for displaying individual job information in a card format.\nProvides visual representation of job status, details, and user interaction capabilities.</p>\n",
+            "rawdescription": "\n\nJob Card Component for displaying individual job information in a card format.\nProvides visual representation of job status, details, and user interaction capabilities.\n\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { MaterialModule } from '../../../../shared/material.module';\r\nimport { Job, Status } from '../../models/dashboard.model';\r\n\r\n/**\r\n * Job Card Component for displaying individual job information in a card format.\r\n * Provides visual representation of job status, details, and user interaction capabilities.\r\n *\r\n * @component\r\n * @selector app-job-card\r\n * @standalone\r\n */\r\n@Component({\r\n  selector: 'app-job-card',\r\n  standalone: true,\r\n  imports: [CommonModule, MaterialModule],\r\n  templateUrl: './job-card.component.html',\r\n  styleUrl: './job-card.component.css',\r\n})\r\nexport class JobCardComponent {\r\n  /**\r\n   * Job data to be displayed in the card.\r\n   * Required input property containing all job information.\r\n   */\r\n  @Input() job!: Job;\r\n\r\n  /**\r\n   * Event emitter for when user wants to view job details.\r\n   * Emits the complete job object to parent component.\r\n   */\r\n  @Output() viewDetails = new EventEmitter<Job>();\r\n\r\n  /**\r\n   * Returns the appropriate Angular Material color theme for a given job status.\r\n   * Used for styling status chips and indicators with consistent color coding.\r\n   *\r\n   * @param status - The job status to get color for\r\n   * @returns Material theme color string ('primary' | 'warn' | 'accent' | '')\r\n   *\r\n   * @example\r\n   * ```typescript\r\n   * const color = this.getStatusColor('completed'); // returns 'primary'\r\n   * ```\r\n   *\r\n   * @description\r\n   * Color mapping:\r\n   * - 'completed' → 'primary' (blue/green theme)\r\n   * - 'pending' → 'warn' (orange/amber theme)\r\n   * - 'inProgress' → 'accent' (purple/pink theme)\r\n   * - default → '' (no theme applied)\r\n   */\r\n  getStatusColor(status: Status): string {\r\n    switch (status) {\r\n      case 'completed':\r\n        return 'primary';\r\n      case 'pending':\r\n        return 'warn';\r\n      case 'inProgress':\r\n        return 'accent';\r\n      default:\r\n        return '';\r\n    }\r\n  }\r\n\r\n  /**\r\n   * Returns the appropriate Material Design icon name for a given job status.\r\n   * Provides visual representation of job state using recognizable icons.\r\n   *\r\n   * @param status - The job status to get icon for\r\n   * @returns Material Design icon name string\r\n   *\r\n   * @example\r\n   * ```typescript\r\n   * const icon = this.getStatusIcon('pending'); // returns 'schedule'\r\n   * ```\r\n   *\r\n   * @description\r\n   * Icon mapping:\r\n   * - 'completed' → 'check_circle' (checkmark in circle)\r\n   * - 'pending' → 'schedule' (clock icon)\r\n   * - 'inProgress' → 'hourglass_empty' (hourglass icon)\r\n   * - default → 'info' (information icon)\r\n   */\r\n  getStatusIcon(status: Status): string {\r\n    switch (status) {\r\n      case 'completed':\r\n        return 'check_circle';\r\n      case 'pending':\r\n        return 'schedule';\r\n      case 'inProgress':\r\n        return 'hourglass_empty';\r\n\r\n      default:\r\n        return 'info';\r\n    }\r\n  }\r\n\r\n  /**\r\n   * Returns the appropriate CSS class name for styling based on job status.\r\n   * Used for applying status-specific styling to card elements.\r\n   *\r\n   * @param status - The job status to get CSS class for\r\n   * @returns CSS class name string\r\n   *\r\n   * @example\r\n   * ```typescript\r\n   * const cssClass = this.getStatusClass('inProgress'); // returns 'in-progress'\r\n   * ```\r\n   *\r\n   * @description\r\n   * CSS class mapping:\r\n   * - 'completed' → 'completed' (green styling)\r\n   * - 'pending' → 'pending' (orange styling)\r\n   * - 'inProgress' → 'in-progress' (purple styling)\r\n   * - default → '' (no specific styling)\r\n   */\r\n  getStatusClass(status: Status): string {\r\n    switch (status) {\r\n      case 'completed':\r\n        return 'completed';\r\n      case 'pending':\r\n        return 'pending';\r\n      case 'inProgress':\r\n        return 'in-progress';\r\n\r\n      default:\r\n        return '';\r\n    }\r\n  }\r\n\r\n  /**\r\n   * Handles the view details button click event.\r\n   * Emits the current job object to parent component for detailed view.\r\n   *\r\n   * @returns void\r\n   *\r\n   * @example\r\n   * ```html\r\n   * <button (click)=\"onViewDetails()\">View Details</button>\r\n   * ```\r\n   *\r\n   * @description\r\n   * This method is typically called when user clicks on \"View Details\" button\r\n   * or the card itself. It emits the complete job object through the viewDetails\r\n   * EventEmitter, allowing parent components to open detailed job information\r\n   * in a sidebar, modal, or separate view.\r\n   */\r\n  onViewDetails(): void {\r\n    this.viewDetails.emit(this.job);\r\n  }\r\n}\r\n",
+            "styleUrl": "./job-card.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<mat-card class=\"job-card\" [ngClass]=\"getStatusClass(job.status)\" (click)=\"onViewDetails()\">\r\n  <div class=\"card-header-with-status\">\r\n    <mat-card-header>\r\n      <mat-card-title>{{ job.sku }}</mat-card-title>\r\n      <mat-card-subtitle>{{ job.assignedUser }}</mat-card-subtitle>\r\n    </mat-card-header>\r\n\r\n    <div class=\"status-badge\" [ngClass]=\"'status-' + getStatusColor(job.status)\">\r\n      <mat-icon class=\"status-icon\">{{ getStatusIcon(job.status) }}</mat-icon>\r\n      <span class=\"status-text\">{{ job.status | titlecase }}</span>\r\n    </div>\r\n  </div>\r\n\r\n  <mat-card-content>\r\n    <div class=\"job-details\">\r\n      <div class=\"details-section\">\r\n        <h4>Details</h4>\r\n        <p class=\"job-details-text\">{{ job.details }}</p>\r\n      </div>\r\n\r\n      <div class=\"created-date\">\r\n        <mat-icon>schedule</mat-icon>\r\n        <span>Created: {{ job.createAt | date: 'medium' }}</span>\r\n      </div>\r\n    </div>\r\n  </mat-card-content>\r\n</mat-card>\r\n"
+        },
+        {
+            "name": "JobDetailsSidebarComponent",
+            "id": "component-JobDetailsSidebarComponent-3c9d38078bf269d65c00ce51b04b441a04e75b6d5acd340c034c55f8424120c63fb7a3ce143ea4d46b4f7f5f2628d0586cec3f744ed40ea382718b1dbac054cb",
+            "file": "src/app/features/dashboard/components/job-details-sidebar/job-details-sidebar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-job-details-sidebar",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./job-details-sidebar.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "isOpen",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nControls the visibility state of the sidebar.\nWhen true, sidebar slides in from the left.\n",
+                    "description": "<p>Controls the visibility state of the sidebar.\nWhen true, sidebar slides in from the left.</p>\n",
+                    "line": 28,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "selectedJob",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nThe job object to display detailed information for.\nWhen null, sidebar shows empty state.\n",
+                    "description": "<p>The job object to display detailed information for.\nWhen null, sidebar shows empty state.</p>\n",
+                    "line": 34,
+                    "type": "Job | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "closeSidebar",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nEvent emitter for closing the sidebar.\nTriggered when user clicks close button or overlay.\n",
+                    "description": "<p>Event emitter for closing the sidebar.\nTriggered when user clicks close button or overlay.</p>\n",
+                    "line": 40,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "jobDeleted",
+                    "defaultValue": "new EventEmitter<string>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nEvent emitter for job deletion.\nEmits the deleted job ID when deletion is successful.\n",
+                    "description": "<p>Event emitter for job deletion.\nEmits the deleted job ID when deletion is successful.</p>\n",
+                    "line": 46,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "jobStatusUpdated",
+                    "defaultValue": "new EventEmitter<Job>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nEvent emitter for job status updates.\nEmits the updated job object when status change is successful.\n",
+                    "description": "<p>Event emitter for job status updates.\nEmits the updated job object when status change is successful.</p>\n",
+                    "line": 52,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "dashboardService",
+                    "defaultValue": "inject(DashboardService)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "<p>Dashboard service for backend operations</p>\n",
+                    "line": 55,
+                    "rawdescription": "\nDashboard service for backend operations",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "statusOptions",
+                    "defaultValue": "[\r\n    { value: 'pending', label: 'Pending' },\r\n    { value: 'inProgress', label: 'In Progress' },\r\n    { value: 'completed', label: 'Completed' },\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "<p>Available status options for the status dropdown.\nDefines all possible job statuses with display labels.</p>\n",
+                    "line": 61,
+                    "rawdescription": "\n\nAvailable status options for the status dropdown.\nDefines all possible job statuses with display labels.\n"
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "getStatusColor",
+                    "args": [
+                        {
+                            "name": "status",
+                            "type": "Status",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 116,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nReturns the appropriate Angular Material color theme for a given job status.\nUsed for styling status indicators and chips in the sidebar.\n\n\n```html\n```typescript\nconst color = this.getStatusColor('completed'); // returns 'primary'\n```\n```\nColor mapping:\n- 'completed' → 'primary' (blue/green theme)\n- 'pending' → 'warn' (orange/amber theme)\n- 'inProgress' → 'accent' (purple/pink theme)\n- default → '' (no theme applied)\n",
+                    "description": "<p>Returns the appropriate Angular Material color theme for a given job status.\nUsed for styling status indicators and chips in the sidebar.</p>\n<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-html\">```typescript\nconst color = this.getStatusColor(&#39;completed&#39;); // returns &#39;primary&#39;</code></pre></div><b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-none\">Color mapping:\n- &#39;completed&#39; → &#39;primary&#39; (blue/green theme)\n- &#39;pending&#39; → &#39;warn&#39; (orange/amber theme)\n- &#39;inProgress&#39; → &#39;accent&#39; (purple/pink theme)\n- default → &#39;&#39; (no theme applied)</code></pre></div>",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 3052,
+                                "end": 3058,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "status"
+                            },
+                            "type": "Status",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 3046,
+                                "end": 3051,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<ul>\n<li>The job status to get color theme for</li>\n</ul>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 3106,
+                                "end": 3113,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>Material theme color string (&#39;primary&#39; | &#39;warn&#39; | &#39;accent&#39; | &#39;&#39;)</p>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 3192,
+                                "end": 3199,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "example"
+                            },
+                            "comment": "<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-typescript\">const color = this.getStatusColor(&#39;completed&#39;); // returns &#39;primary&#39;</code></pre></div>"
+                        }
+                    ]
+                },
+                {
+                    "name": "getStatusIcon",
+                    "args": [
+                        {
+                            "name": "status",
+                            "type": "Status",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 146,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nReturns the appropriate Material Design icon name for a given job status.\nProvides consistent visual representation of job states in the sidebar.\n\n\n```html\n```typescript\nconst icon = this.getStatusIcon('pending'); // returns 'schedule'\n```\n```\nIcon mapping:\n- 'completed' → 'check_circle' (checkmark in circle)\n- 'pending' → 'schedule' (clock icon)\n- 'inProgress' → 'hourglass_empty' (hourglass icon)\n- default → 'info' (information icon)\n",
+                    "description": "<p>Returns the appropriate Material Design icon name for a given job status.\nProvides consistent visual representation of job states in the sidebar.</p>\n<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-html\">```typescript\nconst icon = this.getStatusIcon(&#39;pending&#39;); // returns &#39;schedule&#39;</code></pre></div><b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-none\">Icon mapping:\n- &#39;completed&#39; → &#39;check_circle&#39; (checkmark in circle)\n- &#39;pending&#39; → &#39;schedule&#39; (clock icon)\n- &#39;inProgress&#39; → &#39;hourglass_empty&#39; (hourglass icon)\n- default → &#39;info&#39; (information icon)</code></pre></div>",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 3996,
+                                "end": 4002,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "status"
+                            },
+                            "type": "Status",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 3990,
+                                "end": 3995,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<ul>\n<li>The job status to get icon for</li>\n</ul>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 4043,
+                                "end": 4050,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>Material Design icon name string</p>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 4097,
+                                "end": 4104,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "example"
+                            },
+                            "comment": "<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-typescript\">const icon = this.getStatusIcon(&#39;pending&#39;); // returns &#39;schedule&#39;</code></pre></div>"
+                        }
+                    ]
+                },
+                {
+                    "name": "onCloseSidebar",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 78,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHandles the close sidebar button click event.\nEmits closeSidebar event to notify parent component.\n\n\n```html\n```html\n<button (click)=\"onCloseSidebar()\">Close</button>\n```\n```",
+                    "description": "<p>Handles the close sidebar button click event.\nEmits closeSidebar event to notify parent component.</p>\n<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-html\">```html\n&lt;button (click)=&quot;onCloseSidebar()&quot;&gt;Close&lt;/button&gt;</code></pre></div><b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-none\"></code></pre></div>",
+                    "jsdoctags": [
+                        {
+                            "tagName": {
+                                "pos": 2350,
+                                "end": 2357,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>void</p>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 2376,
+                                "end": 2383,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "example"
+                            },
+                            "comment": "<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-html\">&lt;button (click)=&quot;onCloseSidebar()&quot;&gt;Close&lt;/button&gt;</code></pre></div>"
+                        }
+                    ]
+                },
+                {
+                    "name": "onDeleteJob",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 181,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHandles job deletion with user confirmation.\nShows confirmation dialog and deletes job if confirmed.\nEmits jobDeleted event and closes sidebar on success.\n\n\n```html\n```html\n<button mat-raised-button color=\"warn\" (click)=\"onDeleteJob()\">\n  Delete Job\n</button>\n```\n```\nProcess:\n1. Validates selectedJob exists\n2. Shows native confirmation dialog\n3. Calls dashboard service to delete job\n4. On success: emits jobDeleted with job ID and closes sidebar\n5. On error: shows error alert to user\n\n",
+                    "description": "<p>Handles job deletion with user confirmation.\nShows confirmation dialog and deletes job if confirmed.\nEmits jobDeleted event and closes sidebar on success.</p>\n<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-html\">```html\n&lt;button mat-raised-button color=&quot;warn&quot; (click)=&quot;onDeleteJob()&quot;&gt;\n  Delete Job\n&lt;/button&gt;</code></pre></div><b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-none\">Process:\n1. Validates selectedJob exists\n2. Shows native confirmation dialog\n3. Calls dashboard service to delete job\n4. On success: emits jobDeleted with job ID and closes sidebar\n5. On error: shows error alert to user\n</code></pre></div>",
+                    "jsdoctags": [
+                        {
+                            "tagName": {
+                                "pos": 4941,
+                                "end": 4948,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>void</p>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 4967,
+                                "end": 4974,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "example"
+                            },
+                            "comment": "<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-html\">&lt;button mat-raised-button color=&quot;warn&quot; (click)=&quot;onDeleteJob()&quot;&gt;\n  Delete Job\n&lt;/button&gt;</code></pre></div>"
+                        }
+                    ]
+                },
+                {
+                    "name": "onOverlayClick",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 93,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHandles clicks on the sidebar overlay background.\nCloses the sidebar when user clicks outside the sidebar content.\n\n\n```html\n```html\n<div class=\"overlay\" (click)=\"onOverlayClick()\"></div>\n```\n```",
+                    "description": "<p>Handles clicks on the sidebar overlay background.\nCloses the sidebar when user clicks outside the sidebar content.</p>\n<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-html\">```html\n&lt;div class=&quot;overlay&quot; (click)=&quot;onOverlayClick()&quot;&gt;&lt;/div&gt;</code></pre></div><b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-none\"></code></pre></div>",
+                    "jsdoctags": [
+                        {
+                            "tagName": {
+                                "pos": 2684,
+                                "end": 2691,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>void</p>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 2710,
+                                "end": 2717,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "example"
+                            },
+                            "comment": "<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-html\">&lt;div class=&quot;overlay&quot; (click)=&quot;onOverlayClick()&quot;&gt;&lt;/div&gt;</code></pre></div>"
+                        }
+                    ]
+                },
+                {
+                    "name": "onStatusChange",
+                    "args": [
+                        {
+                            "name": "newStatus",
+                            "type": "Status",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 225,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nHandles job status updates from the status dropdown.\nUpdates job status via API and emits updated job to parent.\n\n\n```html\n```html\n<mat-select (selectionChange)=\"onStatusChange($event.value)\">\n  <mat-option value=\"pending\">Pending</mat-option>\n</mat-select>\n```\n```\nProcess:\n1. Validates selectedJob exists and status is different\n2. Calls dashboard service to update job status\n3. On success: updates local job object and emits jobStatusUpdated\n4. On error: shows error alert to user\n\n",
+                    "description": "<p>Handles job status updates from the status dropdown.\nUpdates job status via API and emits updated job to parent.</p>\n<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-html\">```html\n&lt;mat-select (selectionChange)=&quot;onStatusChange($event.value)&quot;&gt;\n  &lt;mat-option value=&quot;pending&quot;&gt;Pending&lt;/mat-option&gt;\n&lt;/mat-select&gt;</code></pre></div><b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-none\">Process:\n1. Validates selectedJob exists and status is different\n2. Calls dashboard service to update job status\n3. On success: updates local job object and emits jobStatusUpdated\n4. On error: shows error alert to user\n</code></pre></div>",
+                    "jsdoctags": [
+                        {
+                            "name": {
+                                "pos": 6146,
+                                "end": 6155,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "newStatus"
+                            },
+                            "type": "Status",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "pos": 6140,
+                                "end": 6145,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "param"
+                            },
+                            "comment": "<ul>\n<li>The new status to assign to the job</li>\n</ul>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 6201,
+                                "end": 6208,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>void</p>\n"
+                        },
+                        {
+                            "tagName": {
+                                "pos": 6227,
+                                "end": 6234,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "example"
+                            },
+                            "comment": "<b>Example :</b><div><pre class=\"line-numbers\"><code class=\"language-html\">&lt;mat-select (selectionChange)=&quot;onStatusChange($event.value)&quot;&gt;\n  &lt;mat-option value=&quot;pending&quot;&gt;Pending&lt;/mat-option&gt;\n&lt;/mat-select&gt;</code></pre></div>"
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MaterialModule",
+                    "type": "module"
+                }
+            ],
+            "description": "<p>Job Details Sidebar Component for displaying and managing detailed job information.\nProvides a slide-out sidebar interface for viewing, editing, and deleting jobs.\nSupports job status updates and deletion with confirmation dialogs.</p>\n",
+            "rawdescription": "\n\nJob Details Sidebar Component for displaying and managing detailed job information.\nProvides a slide-out sidebar interface for viewing, editing, and deleting jobs.\nSupports job status updates and deletion with confirmation dialogs.\n\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter, inject } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { MaterialModule } from '../../../../shared/material.module';\r\nimport { Job, Status } from '../../models/dashboard.model';\r\nimport { DashboardService } from '../../services/dashboard.service';\r\n\r\n/**\r\n * Job Details Sidebar Component for displaying and managing detailed job information.\r\n * Provides a slide-out sidebar interface for viewing, editing, and deleting jobs.\r\n * Supports job status updates and deletion with confirmation dialogs.\r\n *\r\n * @component\r\n * @selector app-job-details-sidebar\r\n * @standalone\r\n */\r\n@Component({\r\n  selector: 'app-job-details-sidebar',\r\n  standalone: true,\r\n  imports: [CommonModule, MaterialModule],\r\n  templateUrl: './job-details-sidebar.component.html',\r\n  styleUrl: './job-details-sidebar.component.css',\r\n})\r\nexport class JobDetailsSidebarComponent {\r\n  /**\r\n   * Controls the visibility state of the sidebar.\r\n   * When true, sidebar slides in from the left.\r\n   */\r\n  @Input() isOpen = false;\r\n\r\n  /**\r\n   * The job object to display detailed information for.\r\n   * When null, sidebar shows empty state.\r\n   */\r\n  @Input() selectedJob: Job | null = null;\r\n\r\n  /**\r\n   * Event emitter for closing the sidebar.\r\n   * Triggered when user clicks close button or overlay.\r\n   */\r\n  @Output() closeSidebar = new EventEmitter<void>();\r\n\r\n  /**\r\n   * Event emitter for job deletion.\r\n   * Emits the deleted job ID when deletion is successful.\r\n   */\r\n  @Output() jobDeleted = new EventEmitter<string>();\r\n\r\n  /**\r\n   * Event emitter for job status updates.\r\n   * Emits the updated job object when status change is successful.\r\n   */\r\n  @Output() jobStatusUpdated = new EventEmitter<Job>();\r\n\r\n  /** Dashboard service for backend operations */\r\n  private dashboardService = inject(DashboardService);\r\n\r\n  /**\r\n   * Available status options for the status dropdown.\r\n   * Defines all possible job statuses with display labels.\r\n   */\r\n  statusOptions: { value: Status; label: string }[] = [\r\n    { value: 'pending', label: 'Pending' },\r\n    { value: 'inProgress', label: 'In Progress' },\r\n    { value: 'completed', label: 'Completed' },\r\n  ];\r\n\r\n  /**\r\n   * Handles the close sidebar button click event.\r\n   * Emits closeSidebar event to notify parent component.\r\n   *\r\n   * @returns void\r\n   *\r\n   * @example\r\n   * ```html\r\n   * <button (click)=\"onCloseSidebar()\">Close</button>\r\n   * ```\r\n   */\r\n  onCloseSidebar(): void {\r\n    this.closeSidebar.emit();\r\n  }\r\n\r\n  /**\r\n   * Handles clicks on the sidebar overlay background.\r\n   * Closes the sidebar when user clicks outside the sidebar content.\r\n   *\r\n   * @returns void\r\n   *\r\n   * @example\r\n   * ```html\r\n   * <div class=\"overlay\" (click)=\"onOverlayClick()\"></div>\r\n   * ```\r\n   */\r\n  onOverlayClick(): void {\r\n    this.closeSidebar.emit();\r\n  }\r\n\r\n  /**\r\n   * Returns the appropriate Angular Material color theme for a given job status.\r\n   * Used for styling status indicators and chips in the sidebar.\r\n   *\r\n   * @param status - The job status to get color theme for\r\n   * @returns Material theme color string ('primary' | 'warn' | 'accent' | '')\r\n   *\r\n   * @example\r\n   * ```typescript\r\n   * const color = this.getStatusColor('completed'); // returns 'primary'\r\n   * ```\r\n   *\r\n   * @description\r\n   * Color mapping:\r\n   * - 'completed' → 'primary' (blue/green theme)\r\n   * - 'pending' → 'warn' (orange/amber theme)\r\n   * - 'inProgress' → 'accent' (purple/pink theme)\r\n   * - default → '' (no theme applied)\r\n   */\r\n  getStatusColor(status: Status): string {\r\n    if (status === 'completed') {\r\n      return 'primary';\r\n    } else if (status === 'pending') {\r\n      return 'warn';\r\n    } else if (status === 'inProgress') {\r\n      return 'accent';\r\n    }\r\n    return '';\r\n  }\r\n\r\n  /**\r\n   * Returns the appropriate Material Design icon name for a given job status.\r\n   * Provides consistent visual representation of job states in the sidebar.\r\n   *\r\n   * @param status - The job status to get icon for\r\n   * @returns Material Design icon name string\r\n   *\r\n   * @example\r\n   * ```typescript\r\n   * const icon = this.getStatusIcon('pending'); // returns 'schedule'\r\n   * ```\r\n   *\r\n   * @description\r\n   * Icon mapping:\r\n   * - 'completed' → 'check_circle' (checkmark in circle)\r\n   * - 'pending' → 'schedule' (clock icon)\r\n   * - 'inProgress' → 'hourglass_empty' (hourglass icon)\r\n   * - default → 'info' (information icon)\r\n   */\r\n  getStatusIcon(status: Status): string {\r\n    if (status === 'completed') {\r\n      return 'check_circle';\r\n    } else if (status === 'pending') {\r\n      return 'schedule';\r\n    } else if (status === 'inProgress') {\r\n      return 'hourglass_empty';\r\n    }\r\n    return 'info';\r\n  }\r\n\r\n  /**\r\n   * Handles job deletion with user confirmation.\r\n   * Shows confirmation dialog and deletes job if confirmed.\r\n   * Emits jobDeleted event and closes sidebar on success.\r\n   *\r\n   * @returns void\r\n   *\r\n   * @example\r\n   * ```html\r\n   * <button mat-raised-button color=\"warn\" (click)=\"onDeleteJob()\">\r\n   *   Delete Job\r\n   * </button>\r\n   * ```\r\n   *\r\n   * @description\r\n   * Process:\r\n   * 1. Validates selectedJob exists\r\n   * 2. Shows native confirmation dialog\r\n   * 3. Calls dashboard service to delete job\r\n   * 4. On success: emits jobDeleted with job ID and closes sidebar\r\n   * 5. On error: shows error alert to user\r\n   *\r\n   * @throws Shows alert on deletion failure\r\n   */\r\n  onDeleteJob(): void {\r\n    if (!this.selectedJob) {\r\n      return;\r\n    }\r\n\r\n    const jobId = this.selectedJob.id;\r\n\r\n    // Confirmation dialog could be added here\r\n    if (confirm(`Are you sure you want to delete job ${this.selectedJob.sku}?`)) {\r\n      this.dashboardService.deleteJob(jobId).subscribe({\r\n        next: () => {\r\n          this.jobDeleted.emit(jobId);\r\n          this.closeSidebar.emit();\r\n        },\r\n        error: (_error) => {\r\n          alert('Failed to delete job. Please try again.');\r\n        },\r\n      });\r\n    }\r\n  }\r\n\r\n  /**\r\n   * Handles job status updates from the status dropdown.\r\n   * Updates job status via API and emits updated job to parent.\r\n   *\r\n   * @param newStatus - The new status to assign to the job\r\n   * @returns void\r\n   *\r\n   * @example\r\n   * ```html\r\n   * <mat-select (selectionChange)=\"onStatusChange($event.value)\">\r\n   *   <mat-option value=\"pending\">Pending</mat-option>\r\n   * </mat-select>\r\n   * ```\r\n   *\r\n   * @description\r\n   * Process:\r\n   * 1. Validates selectedJob exists and status is different\r\n   * 2. Calls dashboard service to update job status\r\n   * 3. On success: updates local job object and emits jobStatusUpdated\r\n   * 4. On error: shows error alert to user\r\n   *\r\n   * @throws Shows alert on status update failure\r\n   */\r\n  onStatusChange(newStatus: Status): void {\r\n    if (!this.selectedJob || newStatus === this.selectedJob.status) {\r\n      return;\r\n    }\r\n\r\n    this.dashboardService.updateJobStatus(this.selectedJob.id, newStatus).subscribe({\r\n      next: (updatedJob) => {\r\n        // Update the local job object\r\n        if (this.selectedJob) {\r\n          this.selectedJob.status = updatedJob.status;\r\n        }\r\n\r\n        // Emit the updated job to parent component\r\n        this.jobStatusUpdated.emit(updatedJob);\r\n      },\r\n      error: (_error) => {\r\n        alert('Failed to update job status. Please try again.');\r\n      },\r\n    });\r\n  }\r\n}\r\n",
+            "styleUrl": "./job-details-sidebar.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<!-- Sidebar overlay -->\r\n<div\r\n  class=\"sidebar-overlay\"\r\n  [class.active]=\"isOpen\"\r\n  (click)=\"onOverlayClick()\"\r\n  (keyup.enter)=\"onOverlayClick()\"\r\n  tabindex=\"0\"\r\n  role=\"button\"\r\n  aria-label=\"Close sidebar\"\r\n></div>\r\n\r\n<!-- Sidebar -->\r\n<div class=\"sidebar\" [class.open]=\"isOpen\">\r\n  <div class=\"sidebar-header\">\r\n    <h3>Job Details</h3>\r\n    <button mat-icon-button (click)=\"onCloseSidebar()\">\r\n      <mat-icon>close</mat-icon>\r\n    </button>\r\n  </div>\r\n\r\n  @if (selectedJob) {\r\n    <div class=\"sidebar-content\">\r\n      <div class=\"job-header\">\r\n        <div class=\"job-avatar\" [ngClass]=\"'avatar-' + getStatusColor(selectedJob.status)\">\r\n          <mat-icon [color]=\"getStatusColor(selectedJob.status)\">\r\n            {{ getStatusIcon(selectedJob.status) }}\r\n          </mat-icon>\r\n        </div>\r\n        <div class=\"job-title-section\">\r\n          <h2 class=\"job-title\">{{ selectedJob.sku }}</h2>\r\n          <p class=\"job-subtitle\">{{ selectedJob.assignedUser }}</p>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"detail-section\">\r\n        <h4>\r\n          <mat-icon [color]=\"getStatusColor(selectedJob.status)\">info</mat-icon>\r\n          Status\r\n        </h4>\r\n\r\n        <div class=\"status-edit-container\">\r\n          <mat-form-field appearance=\"outline\" class=\"status-select\">\r\n            <mat-label>Select status</mat-label>\r\n            <mat-select [value]=\"selectedJob.status\" (selectionChange)=\"onStatusChange($event.value)\">\r\n              @for (option of statusOptions; track option.value) {\r\n                <mat-option [value]=\"option.value\">\r\n                  <mat-icon class=\"status-option-icon\">{{ getStatusIcon(option.value) }}</mat-icon>\r\n                  {{ option.label }}\r\n                </mat-option>\r\n              }\r\n            </mat-select>\r\n          </mat-form-field>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"detail-section\">\r\n        <h4>\r\n          <mat-icon>description</mat-icon>\r\n          Details\r\n        </h4>\r\n        <p>{{ selectedJob.details }}</p>\r\n      </div>\r\n\r\n      <div class=\"detail-section\">\r\n        <h4>\r\n          <mat-icon>person</mat-icon>\r\n          Assigned User\r\n        </h4>\r\n        <p>{{ selectedJob.assignedUser }}</p>\r\n      </div>\r\n\r\n      <div class=\"detail-section\">\r\n        <h4>\r\n          <mat-icon>schedule</mat-icon>\r\n          Created Date\r\n        </h4>\r\n        <p>{{ selectedJob.createAt | date: \"EEEE, MMMM d, yyyy 'at' h:mm a\" }}</p>\r\n      </div>\r\n\r\n      <button mat-button color=\"warn\" (click)=\"onDeleteJob()\">\r\n        <mat-icon>delete</mat-icon>\r\n        Delete\r\n      </button>\r\n    </div>\r\n  }\r\n</div>\r\n"
+        },
+        {
+            "name": "MainLayoutComponent",
+            "id": "component-MainLayoutComponent-e2d2796e56bc0f9f435e92bf420625e607fb5a9fc4748eb7397761857553194c50a8df4d3c0cbed155f6a38c9dfb803cf43af8d91531499abfb349814f871f0e",
+            "file": "src/app/layout/components/main-layout/main-layout.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-main-layout",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./main-layout.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "RouterOutlet"
+                },
+                {
+                    "name": "HeaderComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { HeaderComponent } from '../header/header.component';\r\n\r\n@Component({\r\n  selector: 'app-main-layout',\r\n  imports: [RouterOutlet, HeaderComponent],\r\n  templateUrl: './main-layout.component.html',\r\n  styleUrl: './main-layout.component.css',\r\n})\r\nexport class MainLayoutComponent {\r\n\r\n}\r\n",
+            "styleUrl": "./main-layout.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"main-layout\">\r\n  <app-header />\r\n  <main class=\"main-content\">\r\n    <router-outlet />\r\n  </main>\r\n</div>\r\n"
+        },
+        {
+            "name": "SidebarComponent",
+            "id": "component-SidebarComponent-099acabb74c3a16b124931836fb0065187b6131eeba748254b4562e52a7f956b5f3f31415e52c516a9cdd0831de9950b7e793c4c2aa00664b743d363d9c5f337",
+            "file": "src/app/layout/components/sidebar/sidebar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-sidebar",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./sidebar.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-sidebar',\r\n  imports: [],\r\n  templateUrl: './sidebar.component.html',\r\n  styleUrl: './sidebar.component.css',\r\n})\r\nexport class SidebarComponent {\r\n\r\n}\r\n",
+            "styleUrl": "./sidebar.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p>sidebar works!</p>\r\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "CoreModule",
+            "id": "module-CoreModule-8d469bb8929c929a2260c9986bd89c7e2fe8e5a2005f5718b53abe8c13805f3a13c8c03eb4795631ed002b63f7c752dcda3825ce4bc27d9b5b505bd15d0f94c4",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/core.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n@NgModule({\r\n  declarations: [],\r\n  imports: [\r\n    CommonModule,\r\n  ],\r\n})\r\nexport class CoreModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "DashboardModule",
+            "id": "module-DashboardModule-91b81c6e39176c1f99de1e433124024f50b787158586a99131ee3c706d063a198aa9882a15f673081894a4b1bb77d8e0269a72826ad6124e8b5569fa1773c276",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/features/dashboard/dashboard.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n@NgModule({\r\n  declarations: [],\r\n  imports: [\r\n    CommonModule,\r\n  ],\r\n})\r\nexport class DashboardModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "MaterialModule",
+            "id": "module-MaterialModule-b527a27c5536bd99fe6cac2872fb2326a8076db70ec8df7a368ab114e0e00fa4d450cb9ee75e0130ca04c850147c6f2a2c61b0456c79ea1cba7172aed76b227a",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/shared/material.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { MatButtonModule } from '@angular/material/button';\r\nimport { MatCardModule } from '@angular/material/card';\r\nimport { MatToolbarModule } from '@angular/material/toolbar';\r\nimport { MatSidenavModule } from '@angular/material/sidenav';\r\nimport { MatListModule } from '@angular/material/list';\r\nimport { MatIconModule } from '@angular/material/icon';\r\nimport { MatGridListModule } from '@angular/material/grid-list';\r\nimport { MatMenuModule } from '@angular/material/menu';\r\nimport { MatInputModule } from '@angular/material/input';\r\nimport { MatFormFieldModule } from '@angular/material/form-field';\r\nimport { MatSelectModule } from '@angular/material/select';\r\nimport { MatTableModule } from '@angular/material/table';\r\nimport { MatPaginatorModule } from '@angular/material/paginator';\r\nimport { MatSortModule } from '@angular/material/sort';\r\nimport { MatDialogModule } from '@angular/material/dialog';\r\nimport { MatSnackBarModule } from '@angular/material/snack-bar';\r\nimport { MatProgressSpinnerModule } from '@angular/material/progress-spinner';\r\nimport { MatChipsModule } from '@angular/material/chips';\r\nimport { MatBadgeModule } from '@angular/material/badge';\r\nimport { MatTabsModule } from '@angular/material/tabs';\r\nimport { MatDatepickerModule } from '@angular/material/datepicker';\r\nimport { MatNativeDateModule } from '@angular/material/core';\r\n\r\nconst materialModules = [\r\n  MatButtonModule,\r\n  MatCardModule,\r\n  MatToolbarModule,\r\n  MatSidenavModule,\r\n  MatListModule,\r\n  MatIconModule,\r\n  MatGridListModule,\r\n  MatMenuModule,\r\n  MatInputModule,\r\n  MatFormFieldModule,\r\n  MatSelectModule,\r\n  MatTableModule,\r\n  MatPaginatorModule,\r\n  MatSortModule,\r\n  MatDialogModule,\r\n  MatSnackBarModule,\r\n  MatProgressSpinnerModule,\r\n  MatChipsModule,\r\n  MatBadgeModule,\r\n  MatTabsModule,\r\n  MatDatepickerModule,\r\n  MatNativeDateModule,\r\n];\r\n\r\n@NgModule({\r\n  imports: materialModules,\r\n  exports: materialModules,\r\n})\r\nexport class MaterialModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "SharedModule",
+            "id": "module-SharedModule-1383df1b1365bd0e723265b6e81d8862d3f6f0e672f338d7caec4d1eaaa23cf949aea2088b3c59857a6a93f1949069d83d7e3329f25b101ea75764fbb8fc6de4",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/shared.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\r\nimport { RouterModule } from '@angular/router';\r\nimport { MaterialModule } from './shared/material.module';\r\n\r\n@NgModule({\r\n  declarations: [],\r\n  imports: [\r\n    CommonModule,\r\n    FormsModule,\r\n    ReactiveFormsModule,\r\n    RouterModule,\r\n    MaterialModule,\r\n  ],\r\n  exports: [\r\n    CommonModule,\r\n    FormsModule,\r\n    ReactiveFormsModule,\r\n    RouterModule,\r\n    MaterialModule,\r\n  ],\r\n})\r\nexport class SharedModule { }\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "MaterialModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "MaterialModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "appConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ApplicationConfig",
+                "defaultValue": "{\r\n  providers: [\r\n    provideRouter(routeConfig),\r\n    provideAnimationsAsync(),\r\n    provideHttpClient(),\r\n  ],\r\n}"
+            },
+            {
+                "name": "materialModules",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/material.module.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\r\n  MatButtonModule,\r\n  MatCardModule,\r\n  MatToolbarModule,\r\n  MatSidenavModule,\r\n  MatListModule,\r\n  MatIconModule,\r\n  MatGridListModule,\r\n  MatMenuModule,\r\n  MatInputModule,\r\n  MatFormFieldModule,\r\n  MatSelectModule,\r\n  MatTableModule,\r\n  MatPaginatorModule,\r\n  MatSortModule,\r\n  MatDialogModule,\r\n  MatSnackBarModule,\r\n  MatProgressSpinnerModule,\r\n  MatChipsModule,\r\n  MatBadgeModule,\r\n  MatTabsModule,\r\n  MatDatepickerModule,\r\n  MatNativeDateModule,\r\n]"
+            }
+        ],
+        "functions": [],
+        "typealiases": [
+            {
+                "name": "Status",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"pending\" | \"completed\" | \"inProgress\"",
+                "file": "src/app/features/dashboard/models/dashboard.model.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 192
+            }
+        ],
+        "enumerations": [
+            {
+                "name": "ActivityType",
+                "childs": [
+                    {
+                        "name": "JOB_CREATED",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "job_created"
+                    },
+                    {
+                        "name": "JOB_COMPLETED",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "job_completed"
+                    },
+                    {
+                        "name": "WAREHOUSE_CREATED",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "warehouse_created"
+                    },
+                    {
+                        "name": "WAREHOUSE_UPDATED",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "warehouse_updated"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/app/features/dashboard/models/dashboard.model.ts"
+            }
+        ],
+        "groupedVariables": {
+            "src/app/app.config.ts": [
+                {
+                    "name": "appConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\r\n  providers: [\r\n    provideRouter(routeConfig),\r\n    provideAnimationsAsync(),\r\n    provideHttpClient(),\r\n  ],\r\n}"
+                }
+            ],
+            "src/app/shared/material.module.ts": [
+                {
+                    "name": "materialModules",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/material.module.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n  MatButtonModule,\r\n  MatCardModule,\r\n  MatToolbarModule,\r\n  MatSidenavModule,\r\n  MatListModule,\r\n  MatIconModule,\r\n  MatGridListModule,\r\n  MatMenuModule,\r\n  MatInputModule,\r\n  MatFormFieldModule,\r\n  MatSelectModule,\r\n  MatTableModule,\r\n  MatPaginatorModule,\r\n  MatSortModule,\r\n  MatDialogModule,\r\n  MatSnackBarModule,\r\n  MatProgressSpinnerModule,\r\n  MatChipsModule,\r\n  MatBadgeModule,\r\n  MatTabsModule,\r\n  MatDatepickerModule,\r\n  MatNativeDateModule,\r\n]"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {
+            "src/app/features/dashboard/models/dashboard.model.ts": [
+                {
+                    "name": "ActivityType",
+                    "childs": [
+                        {
+                            "name": "JOB_CREATED",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "job_created"
+                        },
+                        {
+                            "name": "JOB_COMPLETED",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "job_completed"
+                        },
+                        {
+                            "name": "WAREHOUSE_CREATED",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "warehouse_created"
+                        },
+                        {
+                            "name": "WAREHOUSE_UPDATED",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "warehouse_updated"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "src/app/features/dashboard/models/dashboard.model.ts"
+                }
+            ]
+        },
+        "groupedTypeAliases": {
+            "src/app/features/dashboard/models/dashboard.model.ts": [
+                {
+                    "name": "Status",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"pending\" | \"completed\" | \"inProgress\"",
+                    "file": "src/app/features/dashboard/models/dashboard.model.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 192
+                }
+            ]
+        }
+    },
+    "routes": [],
+    "coverage": {
+        "count": 16,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.config.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "appConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/dashboard/components/dashboard/dashboard.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DashboardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/37",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/dashboard/components/job-card/job-card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "JobCardComponent",
+                "coveragePercent": 100,
+                "coverageCount": "7/7",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/app/features/dashboard/components/job-details-sidebar/job-details-sidebar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "JobDetailsSidebarComponent",
+                "coveragePercent": 100,
+                "coverageCount": "14/14",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/app/features/dashboard/models/dashboard.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "DashboardStats",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/dashboard/models/dashboard.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Job",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/dashboard/models/dashboard.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "RecentActivity",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/dashboard/models/dashboard.model.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Status",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/dashboard/services/dashboard.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "DashboardService",
+                "coveragePercent": 100,
+                "coverageCount": "8/8",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/app/layout/components/header/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/layout/components/main-layout/main-layout.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MainLayoutComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/layout/components/sidebar/sidebar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SidebarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/material.module.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "materialModules",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/models/common.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ApiResponse",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/models/common.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "BaseEntity",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/models/common.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "PaginatedResponse",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/models/common.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "SearchParams",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            }
+        ]
+    }
+}

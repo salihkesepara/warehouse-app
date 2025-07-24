@@ -1,0 +1,86 @@
+<!-- Sidebar overlay -->
+<div
+  class="sidebar-overlay"
+  [class.active]="isOpen"
+  (click)="onOverlayClick()"
+  (keyup.enter)="onOverlayClick()"
+  tabindex="0"
+  role="button"
+  aria-label="Close sidebar"
+></div>
+
+<!-- Sidebar -->
+<div class="sidebar" [class.open]="isOpen">
+  <div class="sidebar-header">
+    <h3>Job Details</h3>
+    <button mat-icon-button (click)="onCloseSidebar()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  @if (selectedJob) {
+    <div class="sidebar-content">
+      <div class="job-header">
+        <div class="job-avatar" [ngClass]="'avatar-' + getStatusColor(selectedJob.status)">
+          <mat-icon [color]="getStatusColor(selectedJob.status)">
+            {{ getStatusIcon(selectedJob.status) }}
+          </mat-icon>
+        </div>
+        <div class="job-title-section">
+          <h2 class="job-title">{{ selectedJob.sku }}</h2>
+          <p class="job-subtitle">{{ selectedJob.assignedUser }}</p>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h4>
+          <mat-icon [color]="getStatusColor(selectedJob.status)">info</mat-icon>
+          Status
+        </h4>
+
+        <div class="status-edit-container">
+          <mat-form-field appearance="outline" class="status-select">
+            <mat-label>Select status</mat-label>
+            <mat-select [value]="selectedJob.status" (selectionChange)="onStatusChange($event.value)">
+              @for (option of statusOptions; track option.value) {
+                <mat-option [value]="option.value">
+                  <mat-icon class="status-option-icon">{{ getStatusIcon(option.value) }}</mat-icon>
+                  {{ option.label }}
+                </mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h4>
+          <mat-icon>description</mat-icon>
+          Details
+        </h4>
+        <p>{{ selectedJob.details }}</p>
+      </div>
+
+      <div class="detail-section">
+        <h4>
+          <mat-icon>person</mat-icon>
+          Assigned User
+        </h4>
+        <p>{{ selectedJob.assignedUser }}</p>
+      </div>
+
+      <div class="detail-section">
+        <h4>
+          <mat-icon>schedule</mat-icon>
+          Created Date
+        </h4>
+        <p>{{ selectedJob.createAt | date: "EEEE, MMMM d, yyyy 'at' h:mm a" }}</p>
+      </div>
+
+      <button mat-button color="warn" (click)="onDeleteJob()">
+        <mat-icon>delete</mat-icon>
+        Delete
+      </button>
+    </div>
+  }
+</div>

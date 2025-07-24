@@ -1,0 +1,248 @@
+/* Sidebar Styles */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -400px;
+  width: 400px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  transition: left 0.3s ease-in-out;
+  overflow-y: auto;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #f5f5f5;
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.sidebar-content {
+  padding: 20px;
+}
+
+.job-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 24px;
+}
+
+.job-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+}
+
+.job-avatar mat-icon {
+  font-size: 32px;
+  width: 32px;
+  height: 32px;
+}
+
+/* Status-based avatar colors */
+.job-avatar.avatar-primary {
+  background-color: rgba(56, 142, 60, 0.1);
+  border: 2px solid rgba(56, 142, 60, 0.3);
+}
+
+.job-avatar.avatar-warn {
+  background-color: rgba(245, 124, 0, 0.1);
+  border: 2px solid rgba(245, 124, 0, 0.3);
+}
+
+.job-avatar.avatar-accent {
+  background-color: rgba(123, 31, 162, 0.1);
+  border: 2px solid rgba(123, 31, 162, 0.3);
+}
+
+/* Custom status colors for sidebar */
+:host ::ng-deep .mat-mdc-chip.mat-primary {
+  --mdc-chip-label-text-color: #388e3c;
+  --mdc-chip-selected-container-color: rgba(56, 142, 60, 0.12);
+}
+
+:host ::ng-deep .mat-mdc-chip.mat-warn {
+  --mdc-chip-label-text-color: #f57c00;
+  --mdc-chip-selected-container-color: rgba(245, 124, 0, 0.12);
+}
+
+:host ::ng-deep .mat-mdc-chip.mat-accent {
+  --mdc-chip-label-text-color: #7b1fa2;
+  --mdc-chip-selected-container-color: rgba(123, 31, 162, 0.12);
+}
+
+/* Custom icon colors for sidebar */
+:host ::ng-deep .mat-icon.mat-primary {
+  color: #388e3c !important;
+}
+
+:host ::ng-deep .mat-icon.mat-warn {
+  color: #f57c00 !important;
+}
+
+:host ::ng-deep .mat-icon.mat-accent {
+  color: #7b1fa2 !important;
+}
+
+.job-title-section {
+  flex: 1;
+}
+
+.job-title {
+  margin: 0 0 4px 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.job-subtitle {
+  margin: 0;
+  color: #666;
+  font-size: 16px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 24px;
+}
+
+.detail-section {
+  margin-bottom: 24px;
+}
+
+.detail-section h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+.detail-section p {
+  margin: 0;
+  color: #666;
+  line-height: 1.5;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.status-badge .status-icon {
+  font-size: 14px;
+  width: 14px;
+  height: 14px;
+}
+
+.status-badge .status-text {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Status colors */
+.status-badge.status-primary {
+  background-color: rgba(56, 142, 60, 0.1);
+  color: #388e3c;
+  border: 1px solid rgba(56, 142, 60, 0.3);
+}
+
+.status-badge.status-warn {
+  background-color: rgba(245, 124, 0, 0.1);
+  color: #f57c00;
+  border: 1px solid rgba(245, 124, 0, 0.3);
+}
+
+.status-badge.status-accent {
+  background-color: rgba(123, 31, 162, 0.1);
+  color: #7b1fa2;
+  border: 1px solid rgba(123, 31, 162, 0.3);
+}
+
+/* Status editing styles */
+.status-edit-container {
+  margin-top: 8px;
+}
+
+.status-select {
+  width: 100%;
+}
+
+.status-select ::ng-deep .mat-mdc-form-field-wrapper {
+  padding-bottom: 0;
+}
+
+.status-select ::ng-deep .mat-mdc-text-field-wrapper {
+  height: 48px;
+}
+
+.status-option-icon {
+  margin-right: 8px;
+  font-size: 16px !important;
+  width: 16px !important;
+  height: 16px !important;
+  vertical-align: middle;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    left: -100%;
+  }
+  
+  .sidebar.open {
+    left: 0;
+  }
+}

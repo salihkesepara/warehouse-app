@@ -1,0 +1,164 @@
+{
+  "jobs": [
+    {
+      "id": "1",
+      "sku": "SKU-125-BLUE",
+      "status": "pending",
+      "assignedUser": "Elif Yılmaz",
+      "createAt": "2025-07-12T08:24:35Z",
+      "details": "Inspect incoming items for damage and verify quantities against the packing list."
+    },
+    {
+      "id": "2",
+      "sku": "SKU-239-GREEN",
+      "status": "completed",
+      "assignedUser": "Ahmet Kaya",
+      "createAt": "2025-07-04T15:02:13Z",
+      "details": "Prepare SKU-239 for outbound shipping. Ensure label accuracy and secure packaging."
+    },
+    {
+      "id": "3",
+      "sku": "SKU-482-RED",
+      "status": "inProgress",
+      "assignedUser": "Zeynep Demir",
+      "createAt": "2025-07-19T03:45:10Z",
+      "details": "Recount inventory and update system records. Notify supervisor if discrepancies are found."
+    },
+    {
+      "id": "4",
+      "sku": "SKU-901-YELLOW",
+      "status": "pending",
+      "assignedUser": "Mehmet Can",
+      "createAt": "2025-07-10T20:11:07Z",
+      "details": "Unload newly arrived pallets and sort items into designated zones by category."
+    },
+    {
+      "id": "5",
+      "sku": "SKU-328-BLUE",
+      "status": "inProgress",
+      "assignedUser": "Fatma Aydın",
+      "createAt": "2025-07-22T12:37:55Z",
+      "details": "Update stock levels in the system after performing a full count of aisle 5."
+    },
+    {
+      "id": "6",
+      "sku": "SKU-764-GREEN",
+      "status": "completed",
+      "assignedUser": "Kerem Şahin",
+      "createAt": "2025-07-09T09:19:30Z",
+      "details": "Pick 30 units for order #A402 from shelf B3 and send to packing area."
+    },
+    {
+      "id": "7",
+      "sku": "SKU-845-RED",
+      "status": "inProgress",
+      "assignedUser": "Aslı Koç",
+      "createAt": "2025-07-02T16:03:41Z",
+      "details": "Verify barcode labels are correctly printed and placed for SKU-845 batch."
+    },
+    {
+      "id": "8",
+      "sku": "SKU-107-YELLOW",
+      "status": "pending",
+      "assignedUser": "Burak Yalçın",
+      "createAt": "2025-07-15T11:27:59Z",
+      "details": "Clean and organize cold storage section before next delivery arrives."
+    },
+    {
+      "id": "9",
+      "sku": "SKU-538-BLUE",
+      "status": "completed",
+      "assignedUser": "Deniz Öz",
+      "createAt": "2025-07-06T21:50:26Z",
+      "details": "Audit randomly selected SKUs for quality and damage reporting."
+    },
+    {
+      "id": "10",
+      "sku": "SKU-419-GREEN",
+      "status": "pending",
+      "assignedUser": "Ezgi Aksoy",
+      "createAt": "2025-07-21T05:48:20Z",
+      "details": "Print new bin location labels and update physical shelves accordingly."
+    },
+    {
+      "id": "11",
+      "sku": "SKU-672-RED",
+      "status": "pending",
+      "assignedUser": "Mert Güneş",
+      "createAt": "2025-07-17T02:19:17Z",
+      "details": "Relocate bulk inventory from dock to long-term storage racks."
+    },
+    {
+      "id": "12",
+      "sku": "SKU-988-YELLOW",
+      "status": "completed",
+      "assignedUser": "Selin Baş",
+      "createAt": "2025-07-11T18:13:29Z",
+      "details": "Tag and verify all items returned under RMA #12321 for reshelving."
+    },
+    {
+      "id": "13",
+      "sku": "SKU-351-BLUE",
+      "status": "inProgress",
+      "assignedUser": "Canan Uslu",
+      "createAt": "2025-07-05T10:35:46Z",
+      "details": "Transfer priority stock to front pick zones for high-turnover items."
+    },
+    {
+      "id": "14",
+      "sku": "SKU-293-GREEN",
+      "status": "completed",
+      "assignedUser": "Yusuf Tekin",
+      "createAt": "2025-07-20T23:54:58Z",
+      "details": "Perform forklift safety check before initiating any heavy item movement."
+    },
+    {
+      "id": "15",
+      "sku": "SKU-705-RED",
+      "status": "pending",
+      "assignedUser": "Buse Erdem",
+      "createAt": "2025-07-08T07:02:31Z",
+      "details": "Assemble sample kits for marketing based on provided SKU list."
+    },
+    {
+      "id": "16",
+      "sku": "SKU-162-YELLOW",
+      "status": "inProgress",
+      "assignedUser": "Taylan Er",
+      "createAt": "2025-07-03T04:44:21Z",
+      "details": "Scan and archive all completed job orders from the last 48 hours."
+    },
+    {
+      "id": "17",
+      "sku": "SKU-490-BLUE",
+      "status": "completed",
+      "assignedUser": "Naz Acar",
+      "createAt": "2025-07-18T13:29:09Z",
+      "details": "Conduct routine pest control checks in all food storage sections."
+    },
+    {
+      "id": "18",
+      "sku": "SKU-217-GREEN",
+      "status": "inProgress",
+      "assignedUser": "Okan Kurt",
+      "createAt": "2025-07-14T22:10:11Z",
+      "details": "Coordinate with logistics team to ensure timely dispatch of urgent orders."
+    },
+    {
+      "id": "19",
+      "sku": "SKU-804-RED",
+      "status": "pending",
+      "assignedUser": "Pelin Uçar",
+      "createAt": "2025-07-07T06:18:40Z",
+      "details": "Label oversized goods for special handling and assign to forklift zone."
+    },
+    {
+      "id": "20",
+      "sku": "SKU-376-YELLOW",
+      "status": "completed",
+      "assignedUser": "Umut Bayraktar",
+      "createAt": "2025-07-22T14:06:15Z",
+      "details": "Double check urgent pick list against current shelf availability."
+    }
+  ]
+}

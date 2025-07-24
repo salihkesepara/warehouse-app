@@ -1,0 +1,27 @@
+<mat-card class="job-card" [ngClass]="getStatusClass(job.status)" (click)="onViewDetails()">
+  <div class="card-header-with-status">
+    <mat-card-header>
+      <mat-card-title>{{ job.sku }}</mat-card-title>
+      <mat-card-subtitle>{{ job.assignedUser }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <div class="status-badge" [ngClass]="'status-' + getStatusColor(job.status)">
+      <mat-icon class="status-icon">{{ getStatusIcon(job.status) }}</mat-icon>
+      <span class="status-text">{{ job.status | titlecase }}</span>
+    </div>
+  </div>
+
+  <mat-card-content>
+    <div class="job-details">
+      <div class="details-section">
+        <h4>Details</h4>
+        <p class="job-details-text">{{ job.details }}</p>
+      </div>
+
+      <div class="created-date">
+        <mat-icon>schedule</mat-icon>
+        <span>Created: {{ job.createAt | date: 'medium' }}</span>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
