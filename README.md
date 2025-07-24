@@ -16,7 +16,7 @@ A modern warehouse management dashboard built with Angular 19, featuring job tra
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/salihkesepara/warehouse-app
    cd warehouse-app
    ```
 
