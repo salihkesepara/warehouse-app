@@ -1,6 +1,6 @@
 # Warehouse Management Application
 
-![Alt Text](https://i.postimg.cc/Kc92k9v6/warehouse-app-preview-1.gif)
+![Warehouse App Preview](https://i.postimg.cc/Kc92k9v6/warehouse-app-preview-1.gif)
 
 A modern warehouse management dashboard built with Angular 19, featuring job tracking, status management, and responsive design. This application demonstrates modern Angular development practices with standalone components, Material Design, and comprehensive documentation.
 
