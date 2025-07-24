@@ -90,7 +90,10 @@ A modern warehouse management dashboard built with Angular 19, featuring job tra
 ```
 src/
 ├── app/
-│   ├── core.module.ts              # Core module (singleton services)
+│   ├── core
+│   │   ├── guards/                  # For authentication and authorization
+│   │   ├── interceptors/            
+│   │   └── services/                
 │   ├── shared.module.ts             # Shared module (common components)
 │   ├── features/
 │   │   └── dashboard/
@@ -107,11 +110,15 @@ src/
 │   │       ├── sidebar/
 │   │       └── main-layout/
 │   └── shared/
-│       ├── material.module.ts       # Angular Material exports
-│       └── models/                  # Shared interfaces
+│       ├── components               # For global reusable components.
+│       ├── directives               # For global reusable directives.
+│       ├── models/                  # Shared interfaces
+│       ├── pipes/                   # For global reusable pipes
+│       └── services/                # For global reusable services
+├── assets/                          # For static files
+├── environments                     # For environment variables
 ├── stories/                         # Storybook stories
 ├── styles/                          # Global styles
-└── assets/                          # Static assets
 ```
 
 ## Limitations
